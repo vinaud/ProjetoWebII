@@ -2,14 +2,18 @@ package persistencia;
 
 import java.util.ArrayList;
 
+import javax.management.Query;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import org.hibernate.Criteria;
+
+import antlr.collections.List;
 import entidades.Servico;
 import exceptions.DAOException;
 
-public class ServicoDAO implements IServicoDAO {
+public class ServicoDAOHibernate implements IServicoDAO {
 	
 	protected static final EntityManagerFactory
 	 factory = Persistence.createEntityManagerFactory("unit");
@@ -22,8 +26,11 @@ public class ServicoDAO implements IServicoDAO {
 
 	@Override
 	public ArrayList<Servico> returnAllServico()throws DAOException {
-		// TODO Auto-generated method stub
-		return null;
+		EntityManager em = factory.createEntityManager();
+		Query query = (Query) em.createQuery("from Servico");  
+		ArrayList<Servico> list = (ArrayList<Servico>)  ((Criteria) query).list();
+		em.close();
+		return list;
 	}
 
 	@Override
