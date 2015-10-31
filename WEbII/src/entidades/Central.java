@@ -8,8 +8,8 @@ import javax.persistence.Id;
 
 @ManagedBean
 @Entity
-public class Servico {
-
+public class Central {
+	
 	@Column
 	private String nome;
 	
@@ -19,6 +19,5 @@ public class Servico {
 	@Id
 	@GeneratedValue
 	private long id;
-	
-	
+
 }
