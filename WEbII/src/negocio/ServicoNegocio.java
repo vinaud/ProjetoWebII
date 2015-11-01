@@ -6,6 +6,7 @@ import entidades.Servico;
 import exceptions.DAOException;
 import persistencia.IServicoDAO;
 import persistencia.ServicoDAOHibernate;
+import persistencia.ServicoDAOMock;
 
 public class ServicoNegocio {
 	
@@ -13,7 +14,7 @@ public class ServicoNegocio {
 	
 	public ServicoNegocio()
 	{
-		dao = new ServicoDAOHibernate();
+		dao = new ServicoDAOMock();
 	}
 	
 	public ArrayList<Servico> getListaServicos() throws DAOException
