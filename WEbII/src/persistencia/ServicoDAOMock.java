@@ -2,9 +2,12 @@ package persistencia;
 
 import java.util.ArrayList;
 
+import javax.annotation.ManagedBean;
+
 import entidades.Servico;
 import exceptions.DAOException;
 
+@ManagedBean
 public class ServicoDAOMock implements IServicoDAO{
 
 	private ArrayList<Servico> servicos;

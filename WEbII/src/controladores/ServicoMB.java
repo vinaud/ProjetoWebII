@@ -8,7 +8,7 @@ import negocio.ServicoNegocio;
 import entidades.Servico;
 import exceptions.DAOException;
 
-@ManagedBean
+@ManagedBean(value="ServicoMB")
 
 
 public class ServicoMB {
