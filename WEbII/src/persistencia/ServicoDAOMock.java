@@ -3,14 +3,16 @@ package persistencia;
 import java.util.ArrayList;
 
 import javax.annotation.ManagedBean;
+import javax.faces.bean.SessionScoped;
 
 import entidades.Servico;
 import exceptions.DAOException;
 
 @ManagedBean
+@SessionScoped
 public class ServicoDAOMock implements IServicoDAO{
 
-	private ArrayList<Servico> servicos;
+	public ArrayList<Servico> servicos;
 	public ServicoDAOMock()
 	{
 		this.servicos = new ArrayList<Servico>();

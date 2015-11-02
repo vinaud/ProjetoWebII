@@ -3,34 +3,35 @@ package controladores;
 import java.util.ArrayList;
 
 import javax.annotation.ManagedBean;
+import javax.faces.bean.SessionScoped;
 
 import negocio.ServicoNegocio;
 import entidades.Servico;
 import exceptions.DAOException;
 
-@ManagedBean(value="ServicoMB")
+@ManagedBean
+@SessionScoped
 
 
 public class ServicoMB {
 	
 	public ArrayList<Servico> servicos;
-	ServicoNegocio negocio;
+	public ServicoNegocio negocio;
+
 	
-	public ServicoMB()
+	public ServicoMB() throws DAOException
 	{
-		retrieveServicos();
 		negocio = new ServicoNegocio();
+		servicos = retrieveServicos();
+		
 	}
 	
-	public void retrieveServicos()
+	public ArrayList<Servico> retrieveServicos() throws DAOException
 	{
-		try {
-			this.servicos=negocio.getListaServicos();
-		} 
-		catch (DAOException e) {
-			
-			e.printStackTrace();
-		}
+		
+			return negocio.getListaServicos();
+		 
+	
 	}
 
 }
