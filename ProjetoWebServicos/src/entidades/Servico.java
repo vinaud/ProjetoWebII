@@ -19,20 +19,25 @@ public class Servico {
 	private String descricao;
 	
 	@Column
-	private float nota;
+	private double nota;
 	
 	@Id
 	@GeneratedValue
 	private long id;
 
-	public Servico(String nome, String descricao) {
+	public Servico(String nome, String descricao,double d) {
 		this.nome = nome;
 		this.descricao = descricao;
+		this.nota = d;
 	}
+
+
 
 	public Servico() {
 		// TODO Auto-generated constructor stub
 	}
+
+
 
 	public String getNome() {
 		return nome;
@@ -50,7 +55,7 @@ public class Servico {
 		this.descricao = descricao;
 	}
 
-	public float getNota() {
+	public double getNota() {
 		return nota;
 	}
 
