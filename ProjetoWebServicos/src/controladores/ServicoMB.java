@@ -40,6 +40,7 @@ public class ServicoMB {
 	public String insereServico() throws DAOException
 	{
 		
+			s = new Servico();
 			s.setNome(nome);
 			s.setDescricao(desc);
 			servicos = negocio.insereServico(s);

@@ -5,31 +5,34 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:ui="http://java.sun.com/jsf/facelets"     
       xmlns:h="http://java.sun.com/jsf/html" version="2.0"    
- 	  xmlns="http://www.w3.org/1999/xhtml">
+ 	  xmlns="http://www.w3.org/1999/xhtml"
+ 	  xmlns:p="http://primefaces.org/ui">
  		
     <h:head>
     	<title>Insira um novo servi&ccedil;o</title>
     </h:head>
     <h:body>
    
-   	<h2>Insira um novo servi&ccedil;o</h2>
+   	
     		
+  
   <h:form>
-	    <h:panelGrid columns="2">
-	    
-	      <h:outputLabel value="Nome"></h:outputLabel>
-	      <h:inputText value="#{servicoMB.nome}"> </h:inputText>
-	      
-	      <h:outputLabel value="Descrição"></h:outputLabel>
-	      <h:inputText value="#{servicoMB.desc}"> </h:inputText>
-	      
-	      
-	    </h:panelGrid>
-	    
-	    <h:commandButton action="#{servicoMB.insereServico}" value="Cadastrar"></h:commandButton>
-	    
-	    
-  </h:form>
+    <p:panel id="panel" header="Insira os dados do serviço" style="margin-bottom:10px;">
+        <p:messages id="messages" />
+        <h:panelGrid columns="2" cellpadding="5">
+        
+            <h:outputLabel for="name" value="Nome :" />
+            <p:inputText id="name" required="false" value="#{servicoMB.nome}" />
+ 
+            <p:outputLabel for="extended" value="Descrição :" />
+            <p:inputText id="extended" required="false" value="#{servicoMB.desc}" />
+ 
+            
+        </h:panelGrid>
+    </p:panel>
+ 
+    <p:commandButton id="s" value="Cadastrar" action="#{servicoMB.insereServico}" />
+</h:form>
   
     		
     </h:body>

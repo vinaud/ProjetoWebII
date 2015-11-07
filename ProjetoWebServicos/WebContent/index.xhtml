@@ -5,7 +5,8 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:ui="http://java.sun.com/jsf/facelets"     
       xmlns:h="http://java.sun.com/jsf/html" version="2.0"   
- 	  xmlns="http://www.w3.org/1999/xhtml">
+ 	  xmlns="http://www.w3.org/1999/xhtml"
+ 	  xmlns:p="http://primefaces.org/ui" >
  		
     <h:head>
     	<title>Listagem de servi&ccedil;os</title>
@@ -47,7 +48,9 @@
     		</h:dataTable>
     		
     		
-    		<a href="insereServico.xhtml">Inserir novo servi&ccedil;o</a>
+    		 <h:form>
+    		 <p:commandButton id="s" value="Inserir novo servi&ccedil;o" action="insereServico.xhtml" />
+             </h:form>
     		
     </h:body>
 </html>
