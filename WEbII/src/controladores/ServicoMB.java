@@ -11,8 +11,6 @@ import exceptions.DAOException;
 
 @ManagedBean
 @SessionScoped
-
-
 public class ServicoMB {
 	
 	public ArrayList<Servico> servicos;
@@ -32,7 +30,7 @@ public class ServicoMB {
 	{
 		
 			servicos = negocio.getListaServicos();
-			return "succes";
+			return "success";
 		 
 	
 	}
@@ -42,7 +40,7 @@ public class ServicoMB {
 		
 			servicos = negocio.insereServico(s);
 			
-			 return "Index?faces-redirect=true";
+			 return "index?faces-redirect=true";
 		 
 	
 	}

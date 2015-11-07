@@ -18,6 +18,9 @@ public class Servico {
 	@Column
 	private String descricao;
 	
+	@Column
+	private float nota;
+	
 	@Id
 	@GeneratedValue
 	private long id;
@@ -45,6 +48,14 @@ public class Servico {
 
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
+	}
+
+	public float getNota() {
+		return nota;
+	}
+
+	public void setNota(float nota) {
+		this.nota = nota;
 	}
 	
 	
