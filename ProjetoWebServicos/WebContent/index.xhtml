@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html     
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"     
+      xmlns:h="http://java.sun.com/jsf/html" version="2.0"   
+ 	  xmlns="http://www.w3.org/1999/xhtml">
+ 		
+    <h:head>
+    	<title>Listagem de servi&ccedil;os</title>
+    </h:head>
+    <h:body>
+    	
+    	<h1>Servi&ccedil;os dispon&iacute;veis</h1>
+    	
+    		<h:dataTable value="#{servicoMB.servicos}" var="l">
+
+    			<h:column>
+    				<!-- column header -->
+    				<f:facet name="header">Servi&ccedil;o</f:facet>
+    				<!-- row record -->
+    				#{l.nome}
+    			</h:column>
+    			
+    			<h:column>
+    				<f:facet name="header">Descri&ccedil;&atilde;o</f:facet>
+    				#{l.descricao}
+    			</h:column>
+    			
+    			
+    			
+    		
+    		</h:dataTable>
+    		
+    		
+    		<a href="insereServico.xhtml">Inserir novo servi&ccedil;o</a>
+    		
+    </h:body>
+</html>
