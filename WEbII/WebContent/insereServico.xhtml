@@ -18,15 +18,15 @@
 	    <h:panelGrid columns="2">
 	    
 	      <h:outputLabel value="Nome"></h:outputLabel>
-	      <h:inputText value="#{ServicoMB.servico.nome}"> </h:inputText>
+	      <h:inputText value="#{servicoMB.nome}"> </h:inputText>
 	      
 	      <h:outputLabel value="Descrição"></h:outputLabel>
-	      <h:inputText value="#{ServicoMB.servico.descricao}"> </h:inputText>
+	      <h:inputText value="#{servicoMB.desc}"> </h:inputText>
 	      
 	      
 	    </h:panelGrid>
 	    
-	    <h:commandButton action="#{ServicoMB.insereServico}" value="Cadastrar"></h:commandButton>
+	    <h:commandButton action="#{servicoMB.insereServico}" value="Cadastrar"></h:commandButton>
 	    
 	    
   </h:form>
