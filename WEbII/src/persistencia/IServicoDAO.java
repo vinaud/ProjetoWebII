@@ -9,7 +9,7 @@ public interface IServicoDAO {
 
 		public Servico returnServico(String nome) throws DAOException;
 		public ArrayList<Servico> returnAllServico() throws DAOException;
-		public ArrayList<Servico> insertServicos(Servico s) throws DAOException;
+		public ArrayList<Servico> insertServico(Servico s) throws DAOException;
 		public ArrayList<Servico> deleteServico()throws DAOException;
 		public ArrayList<Servico> updateServico()throws DAOException;
 	}

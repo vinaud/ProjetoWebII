@@ -17,19 +17,32 @@ public class ServicoMB {
 	
 	public ArrayList<Servico> servicos;
 	public ServicoNegocio negocio;
+	public Servico s;
 
 	
 	public ServicoMB() throws DAOException
 	{
 		negocio = new ServicoNegocio();
-		servicos = retrieveServicos();
+		s = new Servico();
+		 retrieveServicos();
 		
 	}
 	
-	public ArrayList<Servico> retrieveServicos() throws DAOException
+	public String retrieveServicos() throws DAOException
 	{
 		
-			return negocio.getListaServicos();
+			servicos = negocio.getListaServicos();
+			return "succes";
+		 
+	
+	}
+	
+	public String insereServico() throws DAOException
+	{
+		
+			servicos = negocio.insereServico(s);
+			
+			 return "Index?faces-redirect=true";
 		 
 	
 	}

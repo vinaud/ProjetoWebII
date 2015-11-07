@@ -23,5 +23,11 @@ public class ServicoNegocio {
 	{
 		return dao.returnAllServico();
 	}
+	
+	public ArrayList<Servico> insereServico(Servico s) throws DAOException
+	{
+		return dao.insertServico(s);
+	}
+
 
 }

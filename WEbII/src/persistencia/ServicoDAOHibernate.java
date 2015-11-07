@@ -34,7 +34,7 @@ public class ServicoDAOHibernate implements IServicoDAO {
 	}
 
 	@Override
-	public ArrayList<Servico> insertServicos(Servico s)throws DAOException {
+	public ArrayList<Servico> insertServico(Servico s)throws DAOException {
 		EntityManager manager = factory.createEntityManager(); 
 		
 		 try {

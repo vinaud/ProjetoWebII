@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html     
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"     
+      xmlns:h="http://java.sun.com/jsf/html" version="2.0"    
+ 	  xmlns="http://www.w3.org/1999/xhtml">
+ 		
+    <h:head>
+    	<title>Insira um novo servi&ccedil;o</title>
+    </h:head>
+    <h:body>
+   
+   	<h2>Insira um novo servi&ccedil;o</h2>
+    		
+  <h:form>
+	    <h:panelGrid columns="2">
+	    
+	      <h:outputLabel value="Nome"></h:outputLabel>
+	      <h:inputText value="#{ServicoMB.servico.nome}"> </h:inputText>
+	      
+	      <h:outputLabel value="Descrição"></h:outputLabel>
+	      <h:inputText value="#{ServicoMB.servico.descricao}"> </h:inputText>
+	      
+	      
+	    </h:panelGrid>
+	    
+	    <h:commandButton action="#{ServicoMB.insereServico}" value="Cadastrar"></h:commandButton>
+	    
+	    
+  </h:form>
+  
+    		
+    </h:body>
+</html>

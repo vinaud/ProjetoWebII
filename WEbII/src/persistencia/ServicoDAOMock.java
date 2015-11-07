@@ -34,9 +34,9 @@ public class ServicoDAOMock implements IServicoDAO{
 	}
 
 	@Override
-	public ArrayList<Servico> insertServicos(Servico s) throws DAOException {
-		// TODO Auto-generated method stub
-		return null;
+	public ArrayList<Servico> insertServico(Servico s) throws DAOException {
+		servicos.add(s);
+		return servicos;
 	}
 
 	@Override
