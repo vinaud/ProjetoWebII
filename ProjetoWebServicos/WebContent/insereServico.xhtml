@@ -25,10 +25,13 @@
         <h:panelGrid columns="2" cellpadding="5">
         
             <h:outputLabel for="name" value="Nome :" />
-            <p:inputText id="name" required="false" value="#{servicoMB.nome}" />
+            <p:inputText id="name" required="true" value="#{servicoMB.nome}" />
  
             <p:outputLabel for="extended" value="Descrição :" />
             <p:inputText id="extended" required="false" value="#{servicoMB.desc}" />
+            
+            <p:outputLabel for="cat" value="Categoria:" />
+            <p:inputText id="cat" required="false" value="#{servicoMB.cat}" />
  
             
         </h:panelGrid>

@@ -18,6 +18,7 @@ public class ServicoMB {
 	public Servico s;
 	public String nome ="";
 	public String desc ="";
+	public String cat ="";
 
 	
 	public ServicoMB() throws DAOException
@@ -43,6 +44,7 @@ public class ServicoMB {
 			s = new Servico();
 			s.setNome(nome);
 			s.setDescricao(desc);
+			s.setCategoria(cat);
 			servicos = negocio.insereServico(s);
 			
 			 return "index?faces-redirect=true";
@@ -88,6 +90,14 @@ public class ServicoMB {
 
 	public void setS(Servico s) {
 		this.s = s;
+	}
+
+	public String getCat() {
+		return cat;
+	}
+
+	public void setCat(String cat) {
+		this.cat = cat;
 	}
 
 }
