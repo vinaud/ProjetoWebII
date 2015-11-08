@@ -29,5 +29,16 @@ public class ServicoNegocio {
 		return dao.insertServico(s);
 	}
 
+	public ArrayList<Servico> buscaServico(String busca) throws DAOException {
+	
+			return dao.returnServico(busca);
+		
+	}
+
+	public ArrayList<Servico> buscaCategoria(String buscaCategoria) throws DAOException {
+		
+			return dao.returnServicoCategoria(buscaCategoria);
+	}
+
 
 }

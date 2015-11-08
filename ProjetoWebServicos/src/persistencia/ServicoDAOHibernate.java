@@ -19,7 +19,7 @@ public class ServicoDAOHibernate implements IServicoDAO {
 	 factory = Persistence.createEntityManagerFactory("unit");
 
 	@Override
-	public Servico returnServico(String nome) throws DAOException {
+	public ArrayList<Servico> returnServico(String nome) throws DAOException {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -57,6 +57,13 @@ public class ServicoDAOHibernate implements IServicoDAO {
 
 	@Override
 	public ArrayList<Servico> updateServico()throws DAOException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<Servico> returnServicoCategoria(String nome)
+			throws DAOException {
 		// TODO Auto-generated method stub
 		return null;
 	}

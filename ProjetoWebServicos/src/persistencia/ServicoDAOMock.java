@@ -22,9 +22,16 @@ public class ServicoDAOMock implements IServicoDAO{
 	}
 	
 	@Override
-	public Servico returnServico(String nome) throws DAOException {
-		// TODO Auto-generated method stub
-		return null;
+	public ArrayList<Servico> returnServico(String nome) throws DAOException {
+		ArrayList<Servico> pesquisado = new ArrayList<Servico>();
+		for (int i = 0; i < servicos.size(); i++)
+		{
+			if (((Servico) servicos.listIterator(i)).getNome().contains(nome))
+			{
+				pesquisado.add(((Servico) servicos.listIterator(i)));
+			}
+		}
+		return pesquisado;
 	}
 
 	@Override
@@ -48,6 +55,19 @@ public class ServicoDAOMock implements IServicoDAO{
 	@Override
 	public ArrayList<Servico> updateServico() throws DAOException {
 		return null;
+	}
+
+	@Override
+	public ArrayList<Servico> returnServicoCategoria(String categoria){
+	ArrayList<Servico> pesquisado = new ArrayList<Servico>();
+	for (int i = 0; i < servicos.size(); i++)
+	{
+		if (((Servico) servicos.listIterator(i)).getCategoria().contains(categoria))
+		{
+			pesquisado.add(((Servico) servicos.listIterator(i)));
+		}
+	}
+	return pesquisado;
 	}
 
 }

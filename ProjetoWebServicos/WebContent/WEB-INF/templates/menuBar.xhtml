@@ -10,9 +10,13 @@
     <p:menubar>
         <p:submenu label="Categorias" icon="ui-icon-document">
             
-            <p:menuitem value="Documentos" url="#" />
+            <p:menuitem value="Documento" >
+            <p:commandLink action="#{servicoMB.pesquisaCategoria(Documento)}" ajax="false"/>
+            </p:menuitem>
             <p:separator />
-            <p:menuitem value="Ouvidoria" url="#" />
+            <p:menuitem value="Ouvidoria" >
+            <p:commandLink action="#{servicoMB.pesquisaCategoria(Ouvidoria)}" ajax="false"/>
+            </p:menuitem>
         </p:submenu>
         
         <p:submenu label="Centrais de Serviço" icon="ui-icon-document">
@@ -23,9 +27,13 @@
         </p:submenu>
  
         <f:facet name="options">
-            <p:inputText style="margin-right:10px" placeholder="Insira o serviço desejado"/>
-            <p:commandButton type="button" value="Pesquisar" icon="ui-icon-extlink" />
+            <p:inputText style="margin-right:10px" placeholder="Insira o serviço desejado" value="#{servicoMB.busca}"/>
+            <p:commandButton type="button" value="Pesquisar" action="#{servicoMB.pesquisaServico}" />
         </f:facet>
+        
+        
     </p:menubar>
 </h:form>
+
+
 </ui:composition>

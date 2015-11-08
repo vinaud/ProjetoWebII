@@ -1,9 +1,11 @@
 package controladores;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import javax.annotation.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 
 import negocio.ServicoNegocio;
 import entidades.Servico;
@@ -19,6 +21,9 @@ public class ServicoMB {
 	public String nome ="";
 	public String desc ="";
 	public String cat ="";
+	
+	public String busca = "";
+	public String buscaCategoria = "";
 
 	
 	public ServicoMB() throws DAOException
@@ -48,6 +53,24 @@ public class ServicoMB {
 			servicos = negocio.insereServico(s);
 			
 			 return "index?faces-redirect=true";
+		 
+	
+	}
+	
+	public String pesquisaServico() throws DAOException, IOException
+	{
+		
+			servicos = negocio.buscaServico(busca);
+			 return "/WebContent/resultadoPesquisa.xhtml?faces-redirect=true";
+		 
+	
+	}
+	
+	public String pesquisaCategoria(String categoria) throws DAOException, IOException
+	{
+		
+			servicos = negocio.buscaCategoria(categoria);
+			 return "/WebContent/categoria.xhtml?faces-redirect=true";
 		 
 	
 	}
@@ -98,6 +121,14 @@ public class ServicoMB {
 
 	public void setCat(String cat) {
 		this.cat = cat;
+	}
+
+	public String getBusca() {
+		return busca;
+	}
+
+	public void setBusca(String busca) {
+		this.busca = busca;
 	}
 
 }

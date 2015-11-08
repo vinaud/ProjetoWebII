@@ -9,19 +9,22 @@
  	  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"> 
  		
     <h:head>
-    	<title>Listagem de servi&ccedil;os</title>
+    	<title>Resultados da pesquisa</title>
     	<link rel="stylesheet" type="text/css" href="winter.css"></link>
     	<h:outputStylesheet library="css" name="winter.css"  />
     </h:head>
     <h:body>
     <header><ui:include src="/WEB-INF/templates/menuBar.xhtml" /></header>
     	
-    
+    <p:breadCrumb>
+	<p:menuitem value="Listagem" url="index.xhtml" />
+    <p:menuitem value="Resultados" url="#" />
+</p:breadCrumb>
     		 <h:form>
     		 
     		 <p:dataTable var="s" value="#{servicoMB.servicos}" sortMode="multiple">
        			 <f:facet name="header">
-            Lista de serviços disponíveis
+            Lista de serviços encontrados
        			 </f:facet>
       			  <p:column headerText="Servi&ccedil;o" sortBy="#{s.nome}">
            			 <h:outputText value="#{s.nome}" />
@@ -43,7 +46,7 @@
    				 </p:dataTable>
     
     		 <br></br>
-    		 <p:commandButton id="s" value="Inserir novo servi&ccedil;o" action="insereServico.xhtml" />
+    		 
     		
              </h:form>
     		
