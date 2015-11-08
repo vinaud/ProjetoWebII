@@ -1,0 +1,24 @@
+<ui:composition
+	xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui">
+    <h:form>  
+   
+ 
+    <p:menubar>
+        <p:submenu label="Categorias" icon="ui-icon-document">
+            
+            <p:menuitem value="Documentos" url="#" />
+            <p:separator />
+            <p:menuitem value="Ouvidoria" url="#" />
+        </p:submenu>
+ 
+        <f:facet name="options">
+            <p:inputText style="margin-right:10px" placeholder="Insira o serviço desejado"/>
+            <p:commandButton type="button" value="Pesquisar" icon="ui-icon-extlink" />
+        </f:facet>
+    </p:menubar>
+</h:form>
+</ui:composition>
