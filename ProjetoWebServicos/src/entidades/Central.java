@@ -1,7 +1,5 @@
 package entidades;
 
-import java.util.ArrayList;
-
 import javax.annotation.ManagedBean;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -32,6 +30,11 @@ public class Central {
 
 	public String getNome() {
 		return nome;
+	}
+
+	public void setNome(String nome2) {
+		this.nome = nome2;
+		
 	}
 
 }

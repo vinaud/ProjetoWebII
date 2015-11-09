@@ -5,7 +5,6 @@ import java.util.ArrayList;
 
 import javax.annotation.ManagedBean;
 import javax.faces.bean.SessionScoped;
-import javax.faces.context.FacesContext;
 
 import negocio.CentralNegocio;
 import entidades.Central;
@@ -48,7 +47,7 @@ public class CentralMB {
 			c.setNome(nome);
 			centrals = negocio.insereCentral(c);
 			
-			 return "index?faces-redirect=true";
+			 return "listaCentrais?faces-redirect=true";
 		 
 	
 	}
@@ -58,15 +57,6 @@ public class CentralMB {
 		
 			centrals = negocio.buscaCentral(busca);
 			 return "/WebContent/resultadoPesquisa.xhtml?faces-redirect=true";
-		 
-	
-	}
-	
-	public String pesquisaCategoria(String categoria) throws DAOException, IOException
-	{
-		
-			centrals = negocio.buscaCategoria(categoria);
-			 return "/WebContent/categoria.xhtml?faces-redirect=true";
 		 
 	
 	}

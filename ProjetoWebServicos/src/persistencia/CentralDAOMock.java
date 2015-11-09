@@ -11,7 +11,7 @@ public class CentralDAOMock implements ICentralDAO {
 	public CentralDAOMock()
 	{
 		this.centrals = new ArrayList<Central>();
-		centrals.add(new Central("Central d Cidadão Via Direta"));
+		centrals.add(new Central("Central do Cidadão Via Direta"));
 		centrals.add(new Central("Central do Cidadão Alecrim"));
 	}
 	

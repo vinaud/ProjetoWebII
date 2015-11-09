@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html     
+      xmlns:f="http://java.sun.com/jsf/core"   
+      xmlns:h="http://java.sun.com/jsf/html" version="2.0"   
+ 	  xmlns="http://www.w3.org/1999/xhtml"
+ 	  xmlns:p="http://primefaces.org/ui"
+ 	  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"> 
+ 		
+    <h:head>
+    	<title>Listagem de centrais</title>
+    	<link rel="stylesheet" type="text/css" href="winter.css"></link>
+    	<h:outputStylesheet library="css" name="winter.css"  />
+    </h:head>
+    <h:body>
+    <header><ui:include src="/WEB-INF/templates/menuBar.xhtml" /></header>
+    	
+    
+    		 <h:form>
+    		 
+    		 <p:dataTable var="c" value="#{centralMB.centrals}" sortMode="multiple">
+       			 <f:facet name="header">
+            Lista de Centrais
+       			 </f:facet>
+      			  <p:column headerText="Central" sortBy="#{c.nome}">
+           			 <h:outputText value="#{c.nome}" />
+			        </p:column>
+ 
+        
+   				 </p:dataTable>
+    
+    		 <br></br>
+    		 <p:commandButton id="c" value="Inserir nova central" action="insereCentral.xhtml" />
+    		
+             </h:form>
+    		
+    </h:body>
+    
+</html>

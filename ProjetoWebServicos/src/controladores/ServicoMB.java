@@ -5,7 +5,6 @@ import java.util.ArrayList;
 
 import javax.annotation.ManagedBean;
 import javax.faces.bean.SessionScoped;
-import javax.faces.context.FacesContext;
 
 import negocio.ServicoNegocio;
 import entidades.Servico;
