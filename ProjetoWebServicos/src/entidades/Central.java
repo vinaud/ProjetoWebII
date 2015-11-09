@@ -1,5 +1,7 @@
 package entidades;
 
+import java.util.ArrayList;
+
 import javax.annotation.ManagedBean;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -19,5 +21,17 @@ public class Central {
 	@Id
 	@GeneratedValue
 	private long id;
+	
+	public Central(String nome){
+		this.nome = nome;
+	}
+	
+	public Central(){
+		//Auto
+	}
+
+	public String getNome() {
+		return nome;
+	}
 
 }
