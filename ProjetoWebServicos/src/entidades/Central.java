@@ -19,5 +19,22 @@ public class Central {
 	@Id
 	@GeneratedValue
 	private long id;
+	
+	public Central(String nome){
+		this.nome = nome;
+	}
+	
+	public Central(){
+		//Auto
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome2) {
+		this.nome = nome2;
+		
+	}
 
 }
