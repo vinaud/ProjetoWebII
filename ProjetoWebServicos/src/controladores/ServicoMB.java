@@ -15,6 +15,7 @@ import exceptions.DAOException;
 public class ServicoMB {
 	
 	public ArrayList<Servico> servicos;
+	public ArrayList<Servico> resPesquisa;
 	public ServicoNegocio negocio;
 	public Servico s;
 	public String nome ="";
@@ -59,7 +60,7 @@ public class ServicoMB {
 	public String pesquisaServico() throws DAOException, IOException
 	{
 		//System.out.println("Entrei");
-			servicos = negocio.buscaServico(busca);
+			resPesquisa = negocio.buscaServico(busca);
 		//	System.out.println("Entrei");
 			 return "resultadoPesquisa.xhtml?faces-redirect=true";
 		 
@@ -129,6 +130,14 @@ public class ServicoMB {
 
 	public void setBusca(String busca) {
 		this.busca = busca;
+	}
+
+	public ArrayList<Servico> getResPesquisa() {
+		return resPesquisa;
+	}
+
+	public void setResPesquisa(ArrayList<Servico> resPesquisa) {
+		this.resPesquisa = resPesquisa;
 	}
 
 }
