@@ -9,5 +9,10 @@
 		<managed-bean-class>controladores.ServicoMB</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>centralMB</managed-bean-name>
+		<managed-bean-class>controladores.CentralMB</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
 
 </faces-config>

@@ -9,7 +9,6 @@ import javax.persistence.Persistence;
 
 import org.hibernate.Criteria;
 
-import antlr.collections.List;
 import entidades.Servico;
 import exceptions.DAOException;
 
