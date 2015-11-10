@@ -26,9 +26,10 @@ public class ServicoDAOMock implements IServicoDAO{
 		ArrayList<Servico> pesquisado = new ArrayList<Servico>();
 		for (int i = 0; i < servicos.size(); i++)
 		{
-			if (( servicos.listIterator(i).getClass().getName().contains(nome)))
+			if(servicos.get(i).getNome().contains(nome))
+			
 			{
-				pesquisado.add(((Servico) servicos.listIterator(i)));
+				pesquisado.add(servicos.get(i));
 			}
 		}
 		return pesquisado;
@@ -62,9 +63,10 @@ public class ServicoDAOMock implements IServicoDAO{
 	ArrayList<Servico> pesquisado = new ArrayList<Servico>();
 	for (int i = 0; i < servicos.size(); i++)
 	{
-		if (((Servico) servicos.listIterator(i)).getCategoria().contains(categoria))
+		if(servicos.get(i).getNome().contains(categoria))
+			
 		{
-			pesquisado.add(((Servico) servicos.listIterator(i)));
+			pesquisado.add(servicos.get(i));
 		}
 	}
 	return pesquisado;
