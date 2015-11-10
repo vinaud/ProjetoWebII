@@ -44,7 +44,7 @@ public class ServicoMB {
 	
 	public String insereServico() throws DAOException
 	{
-		System.out.println("Entrei");
+		//System.out.println("Entrei");
 			s = new Servico();
 			s.setNome(nome);
 			s.setDescricao(desc);
@@ -58,9 +58,9 @@ public class ServicoMB {
 	
 	public String pesquisaServico() throws DAOException, IOException
 	{
-		System.out.println("Entrei");
+		//System.out.println("Entrei");
 			servicos = negocio.buscaServico(busca);
-			System.out.println("Entrei");
+		//	System.out.println("Entrei");
 			 return "resultadoPesquisa.xhtml?faces-redirect=true";
 		 
 	
