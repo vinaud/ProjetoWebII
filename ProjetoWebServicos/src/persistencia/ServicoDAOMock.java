@@ -63,7 +63,7 @@ public class ServicoDAOMock implements IServicoDAO{
 	ArrayList<Servico> pesquisado = new ArrayList<Servico>();
 	for (int i = 0; i < servicos.size(); i++)
 	{
-		if(servicos.get(i).getNome().contains(categoria))
+		if(servicos.get(i).getCategoria().contains(categoria))
 			
 		{
 			pesquisado.add(servicos.get(i));

@@ -9,18 +9,14 @@
     <p:menubar>
         <p:submenu label="Categorias" icon="ui-icon-document">
             
-            <p:menuitem value="Documento" >
+            <p:menuitem id="link01" action="#{servicoMB.pesquisaCategoria('Documento')}" value="Documento" ajax="false"  >
             
-            <h:commandLink id="link01" action="#{servicoMB.pesquisaCategoria}" value="Documento" />
-       		
             </p:menuitem>
             
             <p:separator />
             
-            <p:menuitem value="Ouvidoria" >       
-            <h:commandLink id="link02" action="#{servicoMB.pesquisaCategoria}" ajax="false">
-       		 <h:outputText value="Ouvidoria" />
-    		</h:commandLink>
+            <p:menuitem id="link02" action="#{servicoMB.pesquisaCategoria('Ouvidoria')}" value="Ouvidoria" ajax="false"  >
+            
             </p:menuitem>
         </p:submenu>
         
