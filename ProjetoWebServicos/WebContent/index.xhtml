@@ -19,10 +19,14 @@
     
     		 <h:form>
     		 
+    		 
     		 <p:dataTable var="s" value="#{servicoMB.servicos}" sortMode="multiple">
+    		 
        			 <f:facet name="header">
             Lista de serviços disponíveis
        			 </f:facet>
+       			 
+       			 <p:growl id="messages" showDetail="true" />
       			  <p:column headerText="Servi&ccedil;o" sortBy="#{s.nome}">
            			 <h:outputText value="#{s.nome}" />
 			        </p:column>
@@ -36,7 +40,11 @@
 			        </p:column>
 			 
 			        <p:column headerText="Nota Geral" sortBy="#{s.nota}">
-			        <p:rating value="#{s.nota}" readonly="true" />
+			        <p:rating value="#{s.nota}" >
+			        
+			        <p:ajax event="rate" listener="#{servicoMB.onrate}" update="messages" />
+            		
+        			</p:rating>
 			            
 			        </p:column>
  

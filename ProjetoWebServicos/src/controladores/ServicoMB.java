@@ -4,7 +4,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import javax.annotation.ManagedBean;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
+
+import org.primefaces.event.RateEvent;
 
 import negocio.ServicoNegocio;
 import entidades.Servico;
@@ -79,6 +83,14 @@ public class ServicoMB {
 		 
 	
 	}
+	
+	public void onrate(RateEvent rateEvent) {
+        FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Rate Event", "Você deu nota:" + ((Integer) rateEvent.getRating()).intValue());
+        FacesContext.getCurrentInstance().addMessage(null, message);
+        
+        Integer rate = (Integer) rateEvent.getRating();
+        System.out.println("avaliou nota :"+ rate);
+    }
 
 	public String getNome() {
 		return nome;
