@@ -39,6 +39,24 @@ public class ServicoNegocio {
 		
 			return dao.returnServicoCategoria(buscaCategoria);
 	}
+	
+	public ArrayList<Servico> atualizarAvaliacao(Servico s, Integer novaNota) throws DAOException
+	{
+		if(s.getVoteCount() == 0)
+		{
+			s.setNota(novaNota);
+		}
+		
+		else
+		{
+			int n =(( s.getNota() + novaNota )/ 2);
+			s.setNota(n);
+		}
+		
+		s.setVoteCount(s.getVoteCount() + 1);
+		
+		return dao.returnAllServico();
+	}
 
 
 }

@@ -22,17 +22,22 @@ public class Servico {
 	private Integer nota;
 	
 	@Column
+	private Integer voteCount ;
+	
+	@Column
 	public String categoria;
 	
 	@Id
 	@GeneratedValue
 	private long id;
 
-	public Servico(String nome, String descricao,Integer d, String categoria) {
+	public Servico(String nome, String descricao,Integer d, String categoria, long id) {
 		this.nome = nome;
 		this.descricao = descricao;
 		this.nota = d;
 		this.categoria = categoria;
+		voteCount = 1;
+		this.id = id;
 	}
 
 
@@ -77,6 +82,30 @@ public class Servico {
 
 	public void setCategoria(String categoria) {
 		this.categoria = categoria;
+	}
+
+
+
+	public Integer getVoteCount() {
+		return voteCount;
+	}
+
+
+
+	public void setVoteCount(Integer voteCount) {
+		this.voteCount = voteCount;
+	}
+
+
+
+	public long getId() {
+		return id;
+	}
+
+
+
+	public void setId(long id) {
+		this.id = id;
 	}
 	
 	

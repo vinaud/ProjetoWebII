@@ -55,7 +55,7 @@ public class ServicoDAOHibernate implements IServicoDAO {
 	}
 
 	@Override
-	public ArrayList<Servico> updateServico()throws DAOException {
+	public ArrayList<Servico> updateServico(Servico s)throws DAOException {
 		// TODO Auto-generated method stub
 		return null;
 	}

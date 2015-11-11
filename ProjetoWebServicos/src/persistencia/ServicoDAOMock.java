@@ -16,9 +16,9 @@ public class ServicoDAOMock implements IServicoDAO{
 	public ServicoDAOMock()
 	{
 		this.servicos = new ArrayList<Servico>();
-		servicos.add(new Servico("ID","Servico para tirar carteira de identidade",4,"Documento"));
-		servicos.add(new Servico("Contas","Servico para gerar 2 via de contas",5,"Documento"));
-		servicos.add(new Servico("Reclamação","Servico para reclamar de problemas",3,"Ouvidoria"));
+		servicos.add(new Servico("ID","Servico para tirar carteira de identidade",4,"Documento",123));
+		servicos.add(new Servico("Contas","Servico para gerar 2 via de contas",5,"Documento",456));
+		servicos.add(new Servico("Reclamação","Servico para reclamar de problemas",3,"Ouvidoria",789));
 	}
 	
 	@Override
@@ -54,8 +54,18 @@ public class ServicoDAOMock implements IServicoDAO{
 	}
 
 	@Override
-	public ArrayList<Servico> updateServico() throws DAOException {
-		return null;
+	public ArrayList<Servico> updateServico(Servico s) throws DAOException {
+		
+		for (int i = 0; i < servicos.size(); i++)
+		{
+			if(servicos.get(i).getId() == s.getId())
+			
+			{
+				servicos.set(i, s);
+				break;
+			}
+		}
+		return servicos;
 	}
 
 	@Override

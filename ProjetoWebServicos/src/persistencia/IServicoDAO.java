@@ -12,6 +12,6 @@ public interface IServicoDAO {
 		public ArrayList<Servico> returnAllServico() throws DAOException;
 		public ArrayList<Servico> insertServico(Servico s) throws DAOException;
 		public ArrayList<Servico> deleteServico()throws DAOException;
-		public ArrayList<Servico> updateServico()throws DAOException;
+		public ArrayList<Servico> updateServico(Servico s)throws DAOException;
 	}
 

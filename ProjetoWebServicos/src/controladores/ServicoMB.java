@@ -2,6 +2,7 @@ package controladores;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Random;
 
 import javax.annotation.ManagedBean;
 import javax.faces.application.FacesMessage;
@@ -59,6 +60,11 @@ public class ServicoMB {
 			s.setDescricao(desc);
 			s.setCategoria(cat);
 			s.setNota(0);
+			s.setVoteCount(0);
+			Random gerador = new Random();
+			 
+	      
+			s.setId( gerador.nextInt());
 			servicos = negocio.insereServico(s);
 			
 			 return "index?faces-redirect=true";
@@ -87,12 +93,15 @@ public class ServicoMB {
 	
 	}
 	
-	public void onrate(RateEvent rateEvent) {
+	public void onrate(RateEvent rateEvent) throws DAOException {
         FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Rate Event", "Você deu nota:" + ((Integer) rateEvent.getRating()).intValue());
         FacesContext.getCurrentInstance().addMessage(null, message);
         
         Integer rate = (Integer) rateEvent.getRating();
+       servicos =  negocio.atualizarAvaliacao(exibido, rate);
        // System.out.println("avaliou nota :"+ rate);
+        
+        
         
     }
 	
