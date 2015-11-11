@@ -19,7 +19,7 @@ public class Servico {
 	private String descricao;
 	
 	@Column
-	private double nota;
+	private Integer nota;
 	
 	@Column
 	public String categoria;
@@ -28,7 +28,7 @@ public class Servico {
 	@GeneratedValue
 	private long id;
 
-	public Servico(String nome, String descricao,double d, String categoria) {
+	public Servico(String nome, String descricao,Integer d, String categoria) {
 		this.nome = nome;
 		this.descricao = descricao;
 		this.nota = d;
@@ -59,11 +59,11 @@ public class Servico {
 		this.descricao = descricao;
 	}
 
-	public double getNota() {
+	public Integer getNota() {
 		return nota;
 	}
 
-	public void setNota(float nota) {
+	public void setNota(Integer nota) {
 		this.nota = nota;
 	}
 

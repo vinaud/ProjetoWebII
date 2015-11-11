@@ -51,6 +51,7 @@ public class ServicoMB {
 			s.setNome(nome);
 			s.setDescricao(desc);
 			s.setCategoria(cat);
+			s.setNota(0);
 			servicos = negocio.insereServico(s);
 			
 			 return "index?faces-redirect=true";
