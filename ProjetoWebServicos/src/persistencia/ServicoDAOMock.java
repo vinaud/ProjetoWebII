@@ -16,8 +16,8 @@ public class ServicoDAOMock implements IServicoDAO{
 	public ServicoDAOMock()
 	{
 		this.servicos = new ArrayList<Servico>();
-		servicos.add(new Servico("ID","Servico para tirar carteira de identidade",4,"Documento",123));
-		servicos.add(new Servico("Contas","Servico para gerar 2 via de contas",5,"Documento",456));
+		servicos.add(new Servico("2 Via da Identidade","Servico para tirar a segunda via da carteira de identidade nacional",4,"Documento",123));
+		servicos.add(new Servico("2 Via da Habilitação","Servico para gerar 2 via da carteira de habilitação",5,"Documento",456));
 		servicos.add(new Servico("Reclamação","Servico para reclamar de problemas",3,"Ouvidoria",789));
 	}
 	
