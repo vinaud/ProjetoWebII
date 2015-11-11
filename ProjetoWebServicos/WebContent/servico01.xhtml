@@ -15,21 +15,33 @@
     </h:head>
     <h:body>
     <header><ui:include src="/WEB-INF/templates/menuBar.xhtml" /></header>
+    
+    <h:form>
+    <p:growl id="messages" showDetail="true" />
     	
-    	<p:panel id="panel" header="Insira os dados do serviço" style="margin-bottom:10px;">
+    	<p:panel id="panel" header="Informações do serviço" style="margin-bottom:10px;">
+    	
+    		<h:outputText value="#{servicoMB.exibido.nome}" /><br><br></br></br>
+    		
+    		<h:outputText value="#{servicoMB.exibido.descricao}" /><br><br></br></br>
+    		
+    		<h:outputText value="Nota Geral" />
+    		
+			        <p:rating value="#{servicoMB.exibido.nota}"    >
+			        
+			        <p:ajax event="rate" listener="#{servicoMB.onrate}" update="messages" />
+            		
+        			</p:rating>
         
-        	Retirar 2 Via da Carteira de Identidade<br><br></br></br>
         	
-        	Texto explicativo sobre o que é esse serviço.<br><br></br></br>
-        	
-        	Documentos Necessários:<br><br></br></br>
+        <br><br></br></br>	Documentos Necessários:<br><br></br></br>
         	
         	
         	Centrais:<br></br>
         	Central do Cidadão -  Avalie - Colocar tempo de espera
         
     	</p:panel>
-    	
+    	</h:form>
     </h:body>
     
 </html>

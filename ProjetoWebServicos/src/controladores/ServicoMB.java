@@ -28,6 +28,8 @@ public class ServicoMB {
 	
 	public String busca = "";
 	public String buscaCategoria = "";
+	
+	public Servico exibido;
 
 
 	
@@ -35,6 +37,7 @@ public class ServicoMB {
 	{
 		negocio = new ServicoNegocio();
 		s = new Servico();
+		exibido = new Servico();
 		 retrieveServicos();
 		
 	}
@@ -89,8 +92,16 @@ public class ServicoMB {
         FacesContext.getCurrentInstance().addMessage(null, message);
         
         Integer rate = (Integer) rateEvent.getRating();
-        System.out.println("avaliou nota :"+ rate);
+       // System.out.println("avaliou nota :"+ rate);
+        
     }
+	
+	public String getExibido(Servico p)
+	{
+		this.exibido = p;
+	//	System.out.println("entrou: "+p.getNome());
+		 return "servico01.xhtml?faces-redirect=true";
+	}
 
 	public String getNome() {
 		return nome;
@@ -154,6 +165,14 @@ public class ServicoMB {
 
 	public void setResPesquisa(ArrayList<Servico> resPesquisa) {
 		this.resPesquisa = resPesquisa;
+	}
+
+	public Servico getExibido() {
+		return exibido;
+	}
+
+	public void setExibido(Servico exibido) {
+		this.exibido = exibido;
 	}
 
 }

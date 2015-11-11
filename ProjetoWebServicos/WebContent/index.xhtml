@@ -28,7 +28,7 @@
        			 
        			 <p:growl id="messages" showDetail="true" />
       			  <p:column headerText="Servi&ccedil;o" sortBy="#{s.nome}">
-           			 <h:outputText value="#{s.nome}" />
+           			 <p:commandLink id="link01" action="#{servicoMB.getExibido(s)}" value="#{s.nome}" ajax="false"  ></p:commandLink>
 			        </p:column>
 			 
 			        <p:column headerText="Descri&ccedil;&atilde;o" sortBy="#{s.descricao}">
@@ -40,7 +40,7 @@
 			        </p:column>
 			 
 			        <p:column headerText="Nota Geral" sortBy="#{s.nota}">
-			        <p:rating value="#{s.nota}" >
+			        <p:rating value="#{s.nota}"  readonly="true"  >
 			        
 			        <p:ajax event="rate" listener="#{servicoMB.onrate}" update="messages" />
             		

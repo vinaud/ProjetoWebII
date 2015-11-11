@@ -27,7 +27,7 @@
             Lista de serviços na categoria
        			 </f:facet>
       			  <p:column headerText="Servi&ccedil;o" sortBy="#{s.nome}">
-           			 <h:outputText value="#{s.nome}" />
+           			 <p:commandLink id="link01" action="#{servicoMB.getExibido(s)}" value="#{s.nome}" ajax="false"  ></p:commandLink>
 			        </p:column>
 			 
 			        <p:column headerText="Descri&ccedil;&atilde;o" sortBy="#{s.descricao}">
