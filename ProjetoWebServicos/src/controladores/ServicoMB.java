@@ -69,9 +69,10 @@ public class ServicoMB {
 	
 	public String pesquisaCategoria(String categoria) throws DAOException, IOException
 	{
-		
-			servicos = negocio.buscaCategoria(categoria);
-			 return "/WebContent/categoria.xhtml?faces-redirect=true";
+		System.out.println("Entrei");
+		resPesquisa = negocio.buscaCategoria(categoria);
+		System.out.println("sai");
+			 return "categoria.xhtml?faces-redirect=true";
 		 
 	
 	}
