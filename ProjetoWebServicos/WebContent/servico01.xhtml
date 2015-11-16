@@ -41,7 +41,7 @@
 			        <p:ajax event="rate" listener="#{servicoMB.onrate}" update="messages" />
             		
         			</p:rating>
-        			 - Tempo Estimado de Espera: 2h30min <br></br>
+        			
         	Central do Cidadão Alecrim
         		<p:rating value="#{servicoMB.exibido.nota}"    >
 			        
@@ -49,6 +49,8 @@
             		
         			</p:rating>
         			 - Tempo Estimado de Espera: 2h30min <br></br>
+        			 
+        			 <p>- Tempo Estimado de Espera: <h:outputText value="#{servicoMB.exibido.tempo}" /> minutos.<br><br></br></br></p> 
         
     	</p:panel>
     	</h:form>
