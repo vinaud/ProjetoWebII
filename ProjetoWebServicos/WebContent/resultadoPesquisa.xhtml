@@ -42,6 +42,10 @@
 			        
 			            <p:rating value="#{s.nota}" readonly="true" />
 			        </p:column>
+			        
+			        <p:column headerText="Tempo médio de espera (min)" sortBy="#{s.tempo}">
+			        <h:outputText value="#{s.tempo}" />
+			        </p:column>
  
         
    				 </p:dataTable>

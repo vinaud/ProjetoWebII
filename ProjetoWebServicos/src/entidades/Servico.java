@@ -27,17 +27,21 @@ public class Servico {
 	@Column
 	public String categoria;
 	
+	@Column
+	private int tempo;
+	
 	@Id
 	@GeneratedValue
 	private long id;
 
-	public Servico(String nome, String descricao,Integer d, String categoria, long id) {
+	public Servico(String nome, String descricao,Integer d, String categoria, long id, int tempo) {
 		this.nome = nome;
 		this.descricao = descricao;
 		this.nota = d;
 		this.categoria = categoria;
 		voteCount = 1;
 		this.id = id;
+		this.tempo = tempo;
 	}
 
 
@@ -106,6 +110,18 @@ public class Servico {
 
 	public void setId(long id) {
 		this.id = id;
+	}
+
+
+
+	public int getTempo() {
+		return tempo;
+	}
+
+
+
+	public void setTempo(int tempo) {
+		this.tempo = tempo;
 	}
 	
 	
