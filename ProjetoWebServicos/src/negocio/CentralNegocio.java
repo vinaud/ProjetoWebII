@@ -29,11 +29,17 @@ public class CentralNegocio {
 		return dao.insertCentral(c);
 	}
 
-	public ArrayList<Central> buscaCentral(String busca) throws DAOException {
+	/*public ArrayList<Central> buscaCentral(String busca) throws DAOException {
 	
 			return dao.returnCentral(busca);
 		
-	}
+	}*/
+	
+	public Central buscaCentral(String busca) throws DAOException {
+		
+		return dao.returnCentral(busca);
+	
+}
 
 
 }

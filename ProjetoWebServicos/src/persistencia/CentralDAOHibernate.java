@@ -18,7 +18,7 @@ public class CentralDAOHibernate implements ICentralDAO {
 	 factory = Persistence.createEntityManagerFactory("unit");
 
 	@Override
-	public ArrayList<Central> returnCentral(String nome) throws DAOException {
+	public Central returnCentral(String nome) throws DAOException {
 		// TODO Auto-generated method stub
 		return null;
 	}

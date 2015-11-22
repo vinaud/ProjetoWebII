@@ -21,6 +21,8 @@ public class CentralMB {
 	
 	public String busca = "";
 	public String buscaCategoria = "";
+	
+	public Central resPesquisa;
 
 	
 	public CentralMB() throws DAOException
@@ -52,11 +54,21 @@ public class CentralMB {
 	
 	}
 	
-	public String pesquisaCentral() throws DAOException, IOException
+	/*public String pesquisaCentral() throws DAOException, IOException
 	{
 		
 			centrals = negocio.buscaCentral(busca);
 			 return "/WebContent/resultadoPesquisa.xhtml?faces-redirect=true";
+		 
+	
+	}*/
+	
+	public String pesquisaCentral(String central) throws DAOException, IOException
+	{
+		//System.out.println("Entrei");
+		resPesquisa = negocio.buscaCentral(central);
+		//System.out.println("sai");
+		 return "central.xhtml?faces-redirect=true";
 		 
 	
 	}

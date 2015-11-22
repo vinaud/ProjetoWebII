@@ -16,6 +16,12 @@ public class Central {
 	@Column
 	private String descricao;
 	
+	@Column
+	private long lat;
+	
+	@Column
+	private long longi;
+	
 	@Id
 	@GeneratedValue
 	private long id;

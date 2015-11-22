@@ -8,6 +8,7 @@ import exceptions.DAOException;
 public class CentralDAOMock implements ICentralDAO {
 
 	public ArrayList<Central> centrals;
+	public Central pesquisado;
 	public CentralDAOMock()
 	{
 		this.centrals = new ArrayList<Central>();
@@ -16,13 +17,14 @@ public class CentralDAOMock implements ICentralDAO {
 	}
 	
 	@Override
-	public ArrayList<Central> returnCentral(String nome) throws DAOException {
-		ArrayList<Central> pesquisado = new ArrayList<Central>();
+	public Central returnCentral(String nome) throws DAOException {
+		
 		for (int i = 0; i < centrals.size(); i++)
 		{
-			if (((Central) centrals.listIterator(i)).getNome().contains(nome))
+			if (centrals.get(i).getNome().equalsIgnoreCase(nome))
 			{
-				pesquisado.add(((Central) centrals.listIterator(i)));
+				pesquisado = centrals.get(i);
+				break;
 			}
 		}
 		return pesquisado;

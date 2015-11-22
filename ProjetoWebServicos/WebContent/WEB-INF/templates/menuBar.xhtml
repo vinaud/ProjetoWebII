@@ -27,9 +27,12 @@
         
         <p:submenu label="Centrais de Serviço" icon="ui-icon-document">
             
-            <p:menuitem value="Central do cidadão - Via direta" url="#" />
+            <p:menuitem id="link03" action="#{centralMB.pesquisaCentral('Central do Cidadão Via Direta')}" value="Central do cidadão - Via direta" ajax="false"  >
+            </p:menuitem>
             <p:separator />
-            <p:menuitem value="Central Alecrim" url="#" />
+           
+            <p:menuitem id="link04" action="#{centralMB.pesquisaCentral('Central do Cidadão Alecrim')}" value="Central Alecrim" ajax="false"  >
+            </p:menuitem>
         </p:submenu>
  
         <f:facet name="options">
