@@ -43,4 +43,28 @@ public class Central {
 		
 	}
 
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+
+	public long getLat() {
+		return lat;
+	}
+
+	public void setLat(long lat) {
+		this.lat = lat;
+	}
+
+	public long getLongi() {
+		return longi;
+	}
+
+	public void setLongi(long longi) {
+		this.longi = longi;
+	}
+
 }

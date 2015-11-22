@@ -1,11 +1,44 @@
-<?xml version="1.0" encoding="ISO-8859-1" ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>Insert title here</title>
-</head>
-<body>
-<div style="background-color:navy;width:100%;color:white"></div>
-</body>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html     
+      xmlns:f="http://java.sun.com/jsf/core"   
+      xmlns:h="http://java.sun.com/jsf/html" version="2.0"   
+ 	  xmlns="http://www.w3.org/1999/xhtml"
+ 	  xmlns:p="http://primefaces.org/ui"
+ 	  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+ 	  xmlns:m="http://code.google.com/p/gmaps4jsf/"> 
+ 		
+    <h:head>
+    	<title>Informações da central</title>
+    	<link rel="stylesheet" type="text/css" href="winter.css"></link>
+    	<h:outputStylesheet library="css" name="winter.css"  />
+    	<script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?sensor=true">
+    </script> 
+    </h:head>
+    <h:body>
+    <header><ui:include src="/WEB-INF/templates/menuBar.xhtml" /></header>
+    
+    <h:form>
+    <p:growl id="messages" showDetail="true" />
+    	
+    	<p:panel id="panel" header="Informações da central" style="margin-bottom:10px;">
+    	
+    		<h:outputText value="#{centralMB.pesquisado.nome}" /><br><br></br></br>
+    		
+    		<h:outputText value="#{centralMB.pesquisado.descricao}" />
+        
+        	
+       <p>Localiza&ccedil;&atilde;o</p>
+        			 
+        			 <m:map width="500px" height="500px" latitude="-5.840348" longitude="-35.209706">
+
+       				 <m:marker latitude="-5.840348" longitude="-35.209706"/>
+					</m:map>
+        
+    	</p:panel>
+    	</h:form>
+    </h:body>
+    
 </html>
