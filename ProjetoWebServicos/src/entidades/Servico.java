@@ -4,8 +4,10 @@ import javax.annotation.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @ManagedBean
 @SessionScoped
@@ -33,6 +35,9 @@ public class Servico {
 	@Id
 	@GeneratedValue
 	private long id;
+	
+	@ManyToOne(fetch = FetchType.EAGER)
+    private Central central;
 
 	public Servico(String nome, String descricao,Integer d, String categoria, long id, int tempo) {
 		this.nome = nome;
