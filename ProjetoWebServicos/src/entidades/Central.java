@@ -17,17 +17,20 @@ public class Central {
 	private String descricao;
 	
 	@Column
-	private long lat;
+	private double lat;
 	
 	@Column
-	private long longi;
+	private double longi;
 	
 	@Id
 	@GeneratedValue
 	private long id;
 	
-	public Central(String nome){
+	public Central(String nome, String descricao, double d, double e){
 		this.nome = nome;
+		this.descricao = descricao;
+		this.lat = d;
+		this.longi = e;
 	}
 	
 	public Central(){
@@ -51,7 +54,7 @@ public class Central {
 		this.descricao = descricao;
 	}
 
-	public long getLat() {
+	public double getLat() {
 		return lat;
 	}
 
@@ -59,7 +62,7 @@ public class Central {
 		this.lat = lat;
 	}
 
-	public long getLongi() {
+	public double getLongi() {
 		return longi;
 	}
 
