@@ -73,6 +73,29 @@
 
        				 <m:marker latitude="#{centralMB.pesquisado.lat}" longitude="#{centralMB.pesquisado.longi}"/>
 					</m:map>
+					
+		<p:dataScroller value="#{centralMB.exibido.comentarios}" var="comment" chunkSize="10" mode="inline" scrollHeight="300">
+        <f:facet name="header">
+           Comentários dos usuários da central:
+        </f:facet>
+ 
+        <h:panelGrid columns="2" style="width:100%" columnClasses="logo,detail">
+            
+            <p:outputPanel>
+                <h:panelGrid columns="2" cellpadding="5">
+                    
+                    <h:outputText value="#{comment}" style="font-weight: bold"/>
+ 
+                   
+                </h:panelGrid>
+            </p:outputPanel>
+        </h:panelGrid>
+    </p:dataScroller>
+						
+	
+	<p:outputLabel for="extended" value="Deixe seu comentário: " /><br></br>
+    <p:inputTextarea rows="6" cols="100" id="extended" required="false" value="#{centralMB.comment}" /><br></br>
+    <p:commandButton id="s" value="Comentar" action="#{centralMB.comentar}" />
         
     	</p:panel>
     	</h:form>

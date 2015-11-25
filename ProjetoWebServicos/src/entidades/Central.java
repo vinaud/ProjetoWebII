@@ -27,7 +27,7 @@ public class Central {
 	private double longi;
 	
 	@Column
-	public ArrayList<String> comentarios;
+	public ArrayList<String> comentarios = new ArrayList<String>();
 	
 	@Id
 	@GeneratedValue
@@ -78,6 +78,24 @@ public class Central {
 
 	public void setLongi(long longi) {
 		this.longi = longi;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+	
+	public ArrayList<String> getComentarios() {
+		return comentarios;
+	}
+
+
+
+	public void setComentarios(ArrayList<String> comentarios) {
+		this.comentarios = comentarios;
 	}
 
 }

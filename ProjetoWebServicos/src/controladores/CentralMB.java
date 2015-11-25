@@ -2,12 +2,14 @@ package controladores;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Random;
 
 import javax.annotation.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 import negocio.CentralNegocio;
 import entidades.Central;
+import entidades.Servico;
 import exceptions.DAOException;
 
 @ManagedBean(value = "centralMB")
@@ -23,13 +25,18 @@ public class CentralMB {
 	public String buscaCategoria = "";
 	
 	public Central pesquisado;
+	
+	public Central exibido;
+	
+	public String comment = " ";
 
 	
 	public CentralMB() throws DAOException
 	{
 		negocio = new CentralNegocio();
 		c = new Central();
-		 retrieveCentrals();
+		exibido = new Central();
+		retrieveCentrals();
 		
 	}
 	
@@ -71,6 +78,26 @@ public class CentralMB {
 		 return "central.xhtml?faces-redirect=true";
 		 
 	
+	}
+	
+	public String comentar() throws DAOException
+	{
+		
+		
+		this.exibido.comentarios.add(comment);
+		
+		
+		negocio.atualizarCentral(exibido);
+		 //System.out.println("gg");
+		 
+		
+		return "central.xhtml?faces-redirect=true";
+	}
+	
+	public String getExibido(Central p)
+	{
+		this.exibido = p;
+		 return "central.xhtml?faces-redirect=true";
 	}
 
 	public String getNome() {
@@ -120,6 +147,22 @@ public class CentralMB {
 
 	public void setPesquisado(Central pesquisado) {
 		this.pesquisado = pesquisado;
+	}
+	
+	public Central getExibido() {
+		return exibido;
+	}
+
+	public void setExibido(Central exibido) {
+		this.exibido = exibido;
+	}
+
+	public String getComment() {
+		return comment;
+	}
+
+	public void setComment(String comment) {
+		this.comment = comment;
 	}
 
 }

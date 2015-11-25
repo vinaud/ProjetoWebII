@@ -3,6 +3,7 @@ package persistencia;
 import java.util.ArrayList;
 
 import entidades.Central;
+import entidades.Servico;
 import exceptions.DAOException;
 
 public interface ICentralDAO {
@@ -12,5 +13,6 @@ public interface ICentralDAO {
 		public ArrayList<Central> insertCentral(Central s) throws DAOException;
 		public ArrayList<Central> deleteCentral()throws DAOException;
 		public ArrayList<Central> updateCentral()throws DAOException;
+		public ArrayList<Central> updateCentral(Central s);
 	}
 

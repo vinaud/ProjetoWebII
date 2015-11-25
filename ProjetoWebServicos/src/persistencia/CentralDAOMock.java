@@ -53,4 +53,21 @@ public class CentralDAOMock implements ICentralDAO {
 		return null;
 	}
 
+	@Override
+	public ArrayList<Central> updateCentral(Central s) {
+		for (int i = 0; i < centrals.size(); i++)
+		{
+			if(centrals.get(i).getId() == s.getId())
+			
+			{
+				//servicos.set(i, s);
+				centrals.add(s);
+				centrals.remove(i);
+				break;
+			}
+		}
+		return centrals;
+		
+	}
+
 }

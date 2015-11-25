@@ -60,4 +60,10 @@ public class CentralDAOHibernate implements ICentralDAO {
 		return null;
 	}
 
+	@Override
+	public ArrayList<Central> updateCentral(Central s) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

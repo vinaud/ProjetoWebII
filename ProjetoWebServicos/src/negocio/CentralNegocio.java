@@ -6,6 +6,7 @@ import javax.annotation.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 import entidades.Central;
+import entidades.Servico;
 import exceptions.DAOException;
 import persistencia.ICentralDAO;
 import persistencia.CentralDAOHibernate;
@@ -40,6 +41,11 @@ public class CentralNegocio {
 		return dao.returnCentral(busca);
 	
 }
+	
+	public void atualizarCentral(Central s) throws DAOException
+	{
+		dao.updateCentral(s);
+	}
 
 
 }
