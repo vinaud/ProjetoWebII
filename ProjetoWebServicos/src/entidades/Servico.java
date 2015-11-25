@@ -1,5 +1,7 @@
 package entidades;
 
+import java.util.ArrayList;
+
 import javax.annotation.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.persistence.Column;
@@ -31,6 +33,9 @@ public class Servico {
 	
 	@Column
 	private int tempo;
+	
+	@Column
+	public ArrayList<String> comentarios = new ArrayList<String>();
 	
 	@Id
 	@GeneratedValue
@@ -127,6 +132,18 @@ public class Servico {
 
 	public void setTempo(int tempo) {
 		this.tempo = tempo;
+	}
+
+
+
+	public ArrayList<String> getComentarios() {
+		return comentarios;
+	}
+
+
+
+	public void setComentarios(ArrayList<String> comentarios) {
+		this.comentarios = comentarios;
 	}
 	
 	

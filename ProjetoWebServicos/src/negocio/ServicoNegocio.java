@@ -57,6 +57,11 @@ public class ServicoNegocio {
 		
 		return dao.returnAllServico();
 	}
+	
+	public void atualizarServico(Servico s) throws DAOException
+	{
+		dao.updateServico(s);
+	}
 
 
 }

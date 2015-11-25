@@ -5,8 +5,11 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import javax.annotation.ManagedBean;
+import javax.faces.application.Application;
 import javax.faces.application.FacesMessage;
+import javax.faces.application.ViewHandler;
 import javax.faces.bean.SessionScoped;
+import javax.faces.component.UIViewRoot;
 import javax.faces.context.FacesContext;
 
 import org.primefaces.event.RateEvent;
@@ -31,6 +34,8 @@ public class ServicoMB {
 	public String buscaCategoria = "";
 	
 	public Servico exibido;
+	
+	public String comment =" ";
 
 
 	
@@ -104,6 +109,22 @@ public class ServicoMB {
         
         
     }
+	
+	public String comentar() throws DAOException
+	{
+		
+		
+		this.exibido.comentarios.add(comment);
+		
+		
+		negocio.atualizarServico(exibido);
+		 //System.out.println("gg");
+		 
+		
+		return "servico01.xhtml?faces-redirect=true";
+	}
+	
+	
 	
 	public String getExibido(Servico p)
 	{
@@ -182,6 +203,14 @@ public class ServicoMB {
 
 	public void setExibido(Servico exibido) {
 		this.exibido = exibido;
+	}
+
+	public String getComment() {
+		return comment;
+	}
+
+	public void setComment(String comment) {
+		this.comment = comment;
 	}
 
 }

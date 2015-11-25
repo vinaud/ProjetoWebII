@@ -19,6 +19,8 @@ public class ServicoDAOMock implements IServicoDAO{
 		servicos.add(new Servico("2 Via da Identidade","Servico para tirar a segunda via da carteira de identidade nacional",4,"Documento",123,30));
 		servicos.add(new Servico("2 Via da Habilitação","Servico para gerar 2 via da carteira de habilitação",5,"Documento",456,25));
 		servicos.add(new Servico("Reclamação","Servico para reclamar de problemas",3,"Ouvidoria",789,15));
+		
+		//servicos.get(1).getComentarios().add("lorem ipsum dolor...");
 	}
 	
 	@Override
@@ -61,7 +63,9 @@ public class ServicoDAOMock implements IServicoDAO{
 			if(servicos.get(i).getId() == s.getId())
 			
 			{
-				servicos.set(i, s);
+				//servicos.set(i, s);
+				servicos.add(s);
+				servicos.remove(i);
 				break;
 			}
 		}

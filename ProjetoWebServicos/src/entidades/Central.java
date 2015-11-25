@@ -26,6 +26,9 @@ public class Central {
 	@Column
 	private double longi;
 	
+	@Column
+	public ArrayList<String> comentarios;
+	
 	@Id
 	@GeneratedValue
 	private long id;

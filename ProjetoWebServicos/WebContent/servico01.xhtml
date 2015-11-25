@@ -37,7 +37,7 @@
         Item 03 <br><br></br></br>
         	
         	
-        	Centrais:<br></br><br></br>
+        	Localização:<br></br><br></br>
         	Central do Cidadão Via Direta
         			
         			<p:rating value="#{servicoMB.exibido.nota}"    >
@@ -45,24 +45,35 @@
 			        <p:ajax event="rate" listener="#{servicoMB.onrate}" update="messages" />
             		
         			</p:rating>
+        		<br></br><br></br>	
+        	
         			
-        	Central do Cidadão Alecrim
-        		<p:rating value="#{servicoMB.exibido.nota}"    >
-			        
-			        <p:ajax event="rate" listener="#{servicoMB.onrate}" update="messages" />
-            		
-        			</p:rating>
-        			 - Tempo Estimado de Espera: 2h30min <br></br>
         			 
         			 <p>- Tempo Estimado de Espera: <h:outputText value="#{servicoMB.exibido.tempo}" /> minutos.<br><br></br></br></p> 
-        			 
-        			 <m:map width="500px" height="500px" latitude="-5.840348" longitude="-35.209706">
-
-       				 <m:marker latitude="-5.840348" longitude="-35.209706"/>
-
-
-
-						</m:map>
+        			  
+        <p:dataScroller value="#{servicoMB.exibido.comentarios}" var="comment" chunkSize="10" mode="inline" scrollHeight="300">
+        <f:facet name="header">
+           Comentários dos usuários do serviço:
+        </f:facet>
+ 
+        <h:panelGrid columns="2" style="width:100%" columnClasses="logo,detail">
+            
+            <p:outputPanel>
+                <h:panelGrid columns="2" cellpadding="5">
+                    
+                    <h:outputText value="#{comment}" style="font-weight: bold"/>
+ 
+                   
+                </h:panelGrid>
+            </p:outputPanel>
+        </h:panelGrid>
+    </p:dataScroller>
+						
+	
+	<p:outputLabel for="extended" value="Deixe seu comentário: " /><br></br>
+    <p:inputTextarea rows="6" cols="100" id="extended" required="false" value="#{servicoMB.comment}" /><br></br>
+    <p:commandButton id="s" value="Comentar" action="#{servicoMB.comentar}" />
+						
         
     	</p:panel>
     	</h:form>
