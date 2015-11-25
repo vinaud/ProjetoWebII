@@ -29,7 +29,7 @@
     	
     		<h:outputText value="#{centralMB.pesquisado.nome}" /><br><br></br></br>
     		
-    		<h:outputText value="#{centralMB.pesquisado.descricao}" />
+    		<h:outputText value="#{centralMB.pesquisado.descricao}" /><br><br></br></br>
     		
     		<p:dataTable var="s" value="#{servicoMB.servicos}" sortMode="multiple">
     		 
@@ -73,7 +73,9 @@
 
        				 <m:marker latitude="#{centralMB.pesquisado.lat}" longitude="#{centralMB.pesquisado.longi}"/>
 					</m:map>
-					
+		
+		<br><br></br></br>
+		
 		<p:dataScroller value="#{centralMB.exibido.comentarios}" var="comment" chunkSize="10" mode="inline" scrollHeight="300">
         <f:facet name="header">
            Comentários dos usuários da central:

@@ -12,8 +12,8 @@ public class CentralDAOMock implements ICentralDAO {
 	public CentralDAOMock()
 	{
 		this.centrals = new ArrayList<Central>();
-		centrals.add(new Central("Central do Cidadão Via Direta","lorem ipsum dolor...",-5.840348,-35.209706));
-		centrals.add(new Central("Central do Cidadão Alecrim","lorem ipsum dolor...",-5.7952444,-35.2174835));
+		centrals.add(new Central("Central do Cidadão Via Direta","A Central do Cidadão foi criada em maio de 2008 para servir de canal de comunicação direta entre o cidadão e o Supremo Tribunal Federal (STF), com o objetivo de facilitar o acesso às informações sobre a competência, o funcionamento e as atribuições da Suprema Corte.",-5.840348,-35.209706));
+		centrals.add(new Central("Central do Cidadão Alecrim","A Central do Cidadão foi criada em maio de 2008 para servir de canal de comunicação direta entre o cidadão e o Supremo Tribunal Federal (STF), com o objetivo de facilitar o acesso às informações sobre a competência, o funcionamento e as atribuições da Suprema Corte.",-5.7952444,-35.2174835));
 	}
 	
 	@Override
