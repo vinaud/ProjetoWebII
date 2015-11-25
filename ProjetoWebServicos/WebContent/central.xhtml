@@ -21,6 +21,8 @@
     <header><ui:include src="/WEB-INF/templates/menuBar.xhtml" /></header>
     
     <h:form>
+    
+    
     <p:growl id="messages" showDetail="true" />
     	
     	<p:panel id="panel" header="Informações da central" style="margin-bottom:10px;">
@@ -28,6 +30,41 @@
     		<h:outputText value="#{centralMB.pesquisado.nome}" /><br><br></br></br>
     		
     		<h:outputText value="#{centralMB.pesquisado.descricao}" />
+    		
+    		<p:dataTable var="s" value="#{servicoMB.servicos}" sortMode="multiple">
+    		 
+       			 <f:facet name="header">
+            Serviços Nesta Central
+       			 </f:facet>
+       			 
+       			 <p:growl id="messages" showDetail="true" />
+      			  <p:column headerText="Servi&ccedil;o" sortBy="#{s.nome}">
+           			 <p:commandLink id="link01" action="#{servicoMB.getExibido(s)}" value="#{s.nome}" ajax="false"  ></p:commandLink>
+			        </p:column>
+			 
+			        <p:column headerText="Descri&ccedil;&atilde;o" sortBy="#{s.descricao}">
+			            <h:outputText value="#{s.descricao}" />
+			        </p:column>
+			        
+			        <p:column headerText="Categoria" sortBy="#{s.categoria}">
+			            <h:outputText value="#{s.categoria}" />
+			        </p:column>
+			 
+			        <p:column headerText="Nota Geral" sortBy="#{s.nota}">
+			        <p:rating value="#{s.nota}"  readonly="true"  >
+			        
+			        <p:ajax event="rate" listener="#{servicoMB.onrate}" update="messages" />
+            		
+        			</p:rating>
+			            
+			        </p:column>
+			        
+			        <p:column headerText="Tempo médio de espera (min)" sortBy="#{s.tempo}">
+			        <h:outputText value="#{s.tempo}" />
+			        </p:column>
+ 
+        
+   				 </p:dataTable>
         
         	
        <p>Localiza&ccedil;&atilde;o</p>
