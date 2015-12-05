@@ -7,23 +7,39 @@ import exceptions.DAOException;
 
 public class UsuarioDAOMock implements IUsuarioDAO {
 
+	public ArrayList<Usuario> usuarios;
+	
+	public UsuarioDAOMock()
+	{
+		this.usuarios = new ArrayList<Usuario>();
+	}
+	
+	
 	@Override
-	public ArrayList<Usuario> returnUsuario(String username)
+	public Usuario returnUsuario(String username)
 			throws DAOException {
-		// TODO Auto-generated method stub
+		for (int i = 0; i < usuarios.size(); i++)
+		{
+			if(usuarios.get(i).getUsername().equals(username))
+			
+			{
+				return usuarios.get(i);
+				
+			}
+		}
 		return null;
 	}
 
 	@Override
 	public ArrayList<Usuario> returnAllUsuario() throws DAOException {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return usuarios;
 	}
 
 	@Override
 	public ArrayList<Usuario> insertUsuario(Usuario u) throws DAOException {
-		// TODO Auto-generated method stub
-		return null;
+		usuarios.add(u);
+		return usuarios;
 	}
 
 	@Override

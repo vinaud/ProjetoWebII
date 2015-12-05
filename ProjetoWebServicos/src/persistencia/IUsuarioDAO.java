@@ -7,7 +7,7 @@ import entidades.Usuario;
 import exceptions.DAOException;
 
 public interface IUsuarioDAO {
-	public ArrayList<Usuario> returnUsuario(String username) throws DAOException;
+	public Usuario returnUsuario(String username) throws DAOException;
 	public ArrayList<Usuario> returnAllUsuario() throws DAOException;
 	public ArrayList<Usuario> insertUsuario(Usuario u) throws DAOException;
 	public ArrayList<Usuario> deleteUsuario()throws DAOException;

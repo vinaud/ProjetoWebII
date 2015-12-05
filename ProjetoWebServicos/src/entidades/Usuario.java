@@ -13,21 +13,69 @@ import javax.persistence.Id;
 public class Usuario {
 
 	@Column
-	public String nome;
+	private String nome;
 	
 	@Column
 	private String sobrenome;
 	
 	@Column
-	public String email;
+	private String email;
 	
 	@Id
 	@GeneratedValue
 	private long id;
 	
 	@Column
-	public String username;
+	private String username;
 	
 	@Column
-	public String senha;
+	private String senha;
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getSobrenome() {
+		return sobrenome;
+	}
+
+	public void setSobrenome(String sobrenome) {
+		this.sobrenome = sobrenome;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
 }
