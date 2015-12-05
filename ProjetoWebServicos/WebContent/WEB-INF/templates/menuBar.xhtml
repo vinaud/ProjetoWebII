@@ -3,9 +3,15 @@
     xmlns:f="http://xmlns.jcp.org/jsf/core"
     xmlns:h="http://xmlns.jcp.org/jsf/html"
     xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-    xmlns:p="http://primefaces.org/ui">
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:pe="http://primefaces.org/ui/extensions">
     <h:form>  
   
+  	<p:menubar>
+  	<p:menuitem  value="Bem vindo (a) X " > </p:menuitem>
+  	<p:menuitem ><pe:gravatar value="leyenasd@gmail.com" size="50" notFound="default"/> </p:menuitem>
+  	</p:menubar>
+  	
     <p:menubar>
     <p:menuitem id="link00" action="index.xhtml" value="Home" ajax="false"  >
             
