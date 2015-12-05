@@ -24,4 +24,10 @@ public class Usuario {
 	@Id
 	@GeneratedValue
 	private long id;
+	
+	@Column
+	public String username;
+	
+	@Column
+	public String senha;
 }
