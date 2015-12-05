@@ -8,7 +8,6 @@ import javax.faces.bean.SessionScoped;
 import entidades.Servico;
 import exceptions.DAOException;
 import persistencia.IServicoDAO;
-import persistencia.ServicoDAOHibernate;
 import persistencia.ServicoDAOMock;
 
 @ManagedBean

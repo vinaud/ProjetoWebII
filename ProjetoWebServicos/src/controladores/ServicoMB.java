@@ -5,11 +5,8 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import javax.annotation.ManagedBean;
-import javax.faces.application.Application;
 import javax.faces.application.FacesMessage;
-import javax.faces.application.ViewHandler;
 import javax.faces.bean.SessionScoped;
-import javax.faces.component.UIViewRoot;
 import javax.faces.context.FacesContext;
 
 import org.primefaces.event.RateEvent;

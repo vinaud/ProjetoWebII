@@ -2,14 +2,11 @@ package controladores;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Random;
-
 import javax.annotation.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 import negocio.CentralNegocio;
 import entidades.Central;
-import entidades.Servico;
 import exceptions.DAOException;
 
 @ManagedBean(value = "centralMB")
