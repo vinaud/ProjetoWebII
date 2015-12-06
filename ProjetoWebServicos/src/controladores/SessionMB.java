@@ -10,23 +10,27 @@ import entidades.Usuario;
 @SessionScoped
 public class SessionMB {
 	
-	private Usuario logado;
-	private UsuarioNegocio negocio;
-	private boolean logged;
+	public Usuario logado;
+	public UsuarioNegocio negocio;
+	public boolean logged;
 	
-//	private int size = 50;  
-  //  private String notFound = "default";
+	public String hello = "";
+	
 	
 	public SessionMB()
 	{
 		this.logado = null;
 		negocio = new UsuarioNegocio();
 		this.logged = false;
+		
+		this.hello = "Bem vindo (a)";
+		 
 	}
 	
 	public String login()
 	{
 		this.logged = true;
+		
 		return "success";
 	}
 	
@@ -34,6 +38,8 @@ public class SessionMB {
 	{
 		this.logado = null;
 		this.logged = false;
+		
+		this.hello = "Bem vindo (a)";
 		return "success";
 	}
 
@@ -45,5 +51,31 @@ public class SessionMB {
 	{
 		return logged;
 	}
+
+	public UsuarioNegocio getNegocio() {
+		return negocio;
+	}
+
+	public void setNegocio(UsuarioNegocio negocio) {
+		this.negocio = negocio;
+	}
+
+	public String getHello() {
+		return hello;
+	}
+
+	public void setHello(String hello) {
+		this.hello = hello;
+	}
+
+	public void setLogado(Usuario logado) {
+		this.logado = logado;
+	}
+
+	public void setLogged(boolean logged) {
+		this.logged = logged;
+	}
+
+	
 
 }

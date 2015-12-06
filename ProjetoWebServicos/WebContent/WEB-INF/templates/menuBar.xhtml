@@ -5,12 +5,17 @@
     xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
     xmlns:p="http://primefaces.org/ui"
     xmlns:pe="http://primefaces.org/ui/extensions">
-    <h:form>  
+    <h:form>
+    	
+    <p:panel id="panel"  style="margin-bottom:10px;">
+    	
+    <h:outputText id="t001" value="Bem vindo (a)" /> <br></br>
+    
+    <h:link value="Efetuar login" outcome="login" />
+   
+    		
+    </p:panel> 
   
-  	<p:menubar>
-  	<p:menuitem  value="Bem vindo (a) X " > </p:menuitem>
-  	<p:menuitem ><pe:gravatar value="leyenasd@gmail.com" size="50" notFound="default"/> </p:menuitem>
-  	</p:menubar>
   	
     <p:menubar>
     <p:menuitem id="link00" action="index.xhtml" value="Home" ajax="false"  >
