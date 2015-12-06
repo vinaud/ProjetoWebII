@@ -11,7 +11,8 @@
     	
     <h:outputText id="t001" value="Bem vindo (a)" /> <br></br>
     
-    <h:link value="Efetuar login" outcome="login" />
+    <h:link value="Efetuar login" outcome="login" rendered="#{!sessionMB.logged}" />
+    <h:link value="Efetuar logout" outcome="logout" rendered="#{sessionMB.logged}" />
    
     		
     </p:panel> 
