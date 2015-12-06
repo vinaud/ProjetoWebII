@@ -2,23 +2,45 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html     
-      xmlns:f="http://java.sun.com/jsf/core"   
-      xmlns:h="http://java.sun.com/jsf/html" version="2.0"   
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"     
+      xmlns:h="http://java.sun.com/jsf/html" version="2.0"    
  	  xmlns="http://www.w3.org/1999/xhtml"
- 	  xmlns:p="http://primefaces.org/ui"
- 	  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"> 
+ 	  xmlns:p="http://primefaces.org/ui">
  		
     <h:head>
-    	<title>Cadastro de Usu&aacute;rio</title>
-    	
+    	<title>Cadastro de usuário novo</title>
     </h:head>
-    
     <h:body>
     
-    	
-    
-    		 
+   
+<p:breadCrumb>
+	<p:menuitem value="Listagem" url="index.xhtml" />
+    <p:menuitem value="Cadastro" url="#" />
+</p:breadCrumb>
+  
+  <h:form>
+    <p:panel id="panel" header="Insira os seus dados" style="margin-bottom:10px;">
+        <p:messages id="messages" />
+        <h:panelGrid columns="2" cellpadding="5">
+        
+            <h:outputLabel for="name" value="Nome :" />
+            <p:inputText id="name" required="true" value="#{usuarioMB.nome}" />
+            
+            <h:outputLabel for="name" value="Username :" />
+            <p:inputText id="usernamename" required="true" value="#{usuarioMB.username}" />
+ 
+            
+ 
+            
+        </h:panelGrid>
+    </p:panel>
+ 
+    <p:commandButton id="s" value="Cadastrar" action="#{usuarioMB.cadastrar}" />
+</h:form>
+  
     		
     </h:body>
+    
     
 </html>

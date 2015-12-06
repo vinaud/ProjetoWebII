@@ -14,7 +14,7 @@ public class UsuarioNegocio {
 	}
 
 	public void insereUsuario(Usuario user) throws DAOException, UsuarioExistenteException {
-		if(dao.returnUsuario(user.getUsername()) !=null)
+		if(dao.returnUsuario(user.getUsername()) != null)
 		{
 		dao.insertUsuario(user);
 		}
