@@ -12,4 +12,5 @@ public interface IUsuarioDAO {
 	public ArrayList<Usuario> insertUsuario(Usuario u) throws DAOException;
 	public ArrayList<Usuario> deleteUsuario()throws DAOException;
 	public ArrayList<Usuario> updateUsuario(Usuario u)throws DAOException;
+	public boolean existeUsuario(String user);
 }

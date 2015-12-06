@@ -36,15 +36,16 @@ public class UsuarioMB {
 	
 	public String cadastrar()
 	{
-		user= new Usuario();
+		user = new Usuario();
 		user.setNome(nome);
 		user.setUsername(username);
+		
 		FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Cadastro", "Usuário cadastrado com sucesso:" + (user.getUsername()));
 		try 
 		{
-		message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Cadastro", "Usuário cadastrado com sucesso:" + (user.getUsername()));
-		negocio.insereUsuario(user);
 		
+		negocio.insereUsuario(user);
+		message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Cadastro", "Usuário cadastrado com sucesso:" + (user.getUsername()));
 		FacesContext.getCurrentInstance().addMessage(null, message);
 		
 		return "index?faces-redirect=true";
