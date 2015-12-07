@@ -14,7 +14,8 @@ public class SessionMB {
 	public UsuarioNegocio negocio;
 	public boolean logged;
 	
-	public String hello = "";
+	String username = "";
+	String password = "";
 	
 	
 	public SessionMB()
@@ -22,8 +23,6 @@ public class SessionMB {
 		this.logado = null;
 		negocio = new UsuarioNegocio();
 		this.logged = false;
-		
-		this.hello = "Bem vindo (a)";
 		 
 	}
 	
@@ -39,7 +38,7 @@ public class SessionMB {
 		this.logado = null;
 		this.logged = false;
 		
-		this.hello = "Bem vindo (a)";
+		
 		return "success";
 	}
 
@@ -60,13 +59,6 @@ public class SessionMB {
 		this.negocio = negocio;
 	}
 
-	public String getHello() {
-		return hello;
-	}
-
-	public void setHello(String hello) {
-		this.hello = hello;
-	}
 
 	public void setLogado(Usuario logado) {
 		this.logado = logado;
@@ -74,6 +66,22 @@ public class SessionMB {
 
 	public void setLogged(boolean logged) {
 		this.logged = logged;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	

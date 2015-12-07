@@ -1,10 +1,50 @@
-<!DOCTYPE html>
-<html>
-<head>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html     
+      xmlns:f="http://java.sun.com/jsf/core"   
+      xmlns:h="http://java.sun.com/jsf/html" version="2.0"   
+ 	  xmlns="http://www.w3.org/1999/xhtml"
+ 	  xmlns:p="http://primefaces.org/ui"
+ 	  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+ 	  xmlns:m="http://code.google.com/p/gmaps4jsf/"> 
+ 		
+    <h:head>
+    	<title>Login</title>
+    </h:head>
+    <h:body>
+    
+    
+    <h:form>
+   
+    	
+    <p:panel  header="Login" >
+    	
+    <h:panelGroup style=" text-align:center">
 
-<title>Insert title here</title>
-</head>
-<body>
+           <h:outputLabel  value="Username :" />
+            <p:inputText id="username" required="true" value="#{sessionMB.username}" />
+            <br></br>
+            <br></br>
+            <h:outputText value="Senha :     " />
+       	    <p:password id="senha" value="#{sessionMB.password}"  />
+       	    <br></br>
+            <br></br>
+       	    
+     
 
-</body>
+    </h:panelGroup>
+    
+    <p:commandButton  value="Logar" action="#{sessionMB.login}" />
+     <br></br>
+     <p:link outcome="index" value="Voltar">
+     <f:param name="Voltar" value="10" />
+     </p:link>
+     
+    </p:panel>
+    
+     
+    </h:form>
+    </h:body>
+    
 </html>
