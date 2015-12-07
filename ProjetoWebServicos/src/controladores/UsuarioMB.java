@@ -17,6 +17,9 @@ public class UsuarioMB {
 	public Usuario user; 
 	public String nome;
 	public String username;
+	public String sobrenome;
+	public String email;
+	public String senha;
 	private UsuarioNegocio negocio;
 	
 	public UsuarioMB()
@@ -95,5 +98,29 @@ public class UsuarioMB {
 
 	public void setUsername(String username) {
 		this.username = username;
+	}
+
+	public String getSobrenome() {
+		return sobrenome;
+	}
+
+	public void setSobrenome(String sobrenome) {
+		this.sobrenome = sobrenome;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
 	}
 }
