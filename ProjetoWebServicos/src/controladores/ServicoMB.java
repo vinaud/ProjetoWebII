@@ -96,7 +96,7 @@ public class ServicoMB {
 	}
 	
 	public void onrate(RateEvent rateEvent) throws DAOException {
-        FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Rate Event", "Você deu nota:" + ((Integer) rateEvent.getRating()).intValue());
+        FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Avaliação", "Você deu nota:" + ((Integer) rateEvent.getRating()).intValue());
         FacesContext.getCurrentInstance().addMessage(null, message);
         
         Integer rate = (Integer) rateEvent.getRating();

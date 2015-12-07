@@ -46,12 +46,12 @@ public class UsuarioMB {
 		user.setEmail(email);
 		user.setSenha(senha);
 		
-		FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Cadastro", "Usuário cadastrado com sucesso:" + (user.getUsername()));
+		
 		try 
 		{
 		
 		negocio.insereUsuario(user);
-		message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Cadastro", "Usuário cadastrado com sucesso:" + (user.getUsername()));
+		FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Cadastro", "Usuário cadastrado com sucesso:" + (user.getUsername()));
 		FacesContext.getCurrentInstance().addMessage(null, message);
 		
 		return "index?faces-redirect=true";
@@ -59,7 +59,7 @@ public class UsuarioMB {
 		
 		catch (DAOException e)
 		{
-			 message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Cadastro", "Erro no banco, cadastro não efetuado");
+			FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Cadastro", "Erro no banco, cadastro não efetuado");
 			 FacesContext.getCurrentInstance().addMessage(null, message);
 			 e.printStackTrace();
 
@@ -67,7 +67,7 @@ public class UsuarioMB {
 		}
 		catch (UsuarioExistenteException e) 
 		{
-			message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Cadastro", "Usuário "+ (user.getUsername()) +" já existente. Insira outro username");
+			FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Cadastro", "Usuário "+ (user.getUsername()) +" já existente. Insira outro username");
 			FacesContext.getCurrentInstance().addMessage(null, message);
 			e.printStackTrace();
 			
