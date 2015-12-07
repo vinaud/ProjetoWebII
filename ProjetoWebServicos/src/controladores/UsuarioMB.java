@@ -42,6 +42,9 @@ public class UsuarioMB {
 		user = new Usuario();
 		user.setNome(nome);
 		user.setUsername(username);
+		user.setSobrenome(sobrenome);
+		user.setEmail(email);
+		user.setSenha(senha);
 		
 		FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Cadastro", "Usuário cadastrado com sucesso:" + (user.getUsername()));
 		try 
