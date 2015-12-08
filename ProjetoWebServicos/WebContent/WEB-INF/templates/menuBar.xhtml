@@ -9,7 +9,7 @@
     	
     <p:panel id="panel"  style="margin-bottom:10px;">
     	
-    <h:outputText id="t001" value="Bem vindo (a) " /><h:outputText id="loggedName" value="#{usuarioMB.logado.nome}" /> <br></br>
+    <h:outputText id="t001" value="Bem vindo (a) " /><h:outputText id="loggedName" value="#{usuarioMB.welcome}" /> <br></br>
     
     <h:link value="Efetuar login" outcome="login" rendered="#{!usuarioMB.logged}"  />
     

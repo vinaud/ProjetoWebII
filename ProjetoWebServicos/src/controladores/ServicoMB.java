@@ -12,6 +12,7 @@ import javax.faces.context.FacesContext;
 import org.primefaces.event.RateEvent;
 
 import negocio.ServicoNegocio;
+import entidades.Comentario;
 import entidades.Servico;
 import exceptions.DAOException;
 
@@ -109,7 +110,8 @@ public class ServicoMB {
 	
 	public String comentar() throws DAOException
 	{
-		
+		Comentario c = new Comentario();
+		c.setComentario(comment);
 		
 		this.exibido.comentarios.add(comment);
 		

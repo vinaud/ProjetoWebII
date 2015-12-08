@@ -223,4 +223,12 @@ public class UsuarioMB {
 		this.lusername = lusername;
 	}
 
+	public String getWelcome() {
+		return welcome;
+	}
+
+	public void setWelcome(String welcome) {
+		this.welcome = welcome;
+	}
+
 }
