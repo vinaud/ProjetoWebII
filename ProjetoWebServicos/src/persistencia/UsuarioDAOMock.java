@@ -42,6 +42,20 @@ public class UsuarioDAOMock implements IUsuarioDAO {
 		}
 		return false;
 	}
+	
+	public boolean existeUsuarioSenha(String user, String senha) {
+		for (int i = 0; i < usuarios.size(); i++)
+		{
+			if(usuarios.get(i).getUsername().equals(user) && usuarios.get(i).getSenha().equals(senha))
+			
+			{
+				return true;
+				
+			}
+		}
+		return false;
+	}
+	
 
 	@Override
 	public ArrayList<Usuario> returnAllUsuario() throws DAOException {

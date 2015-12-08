@@ -4,6 +4,7 @@ import persistencia.IUsuarioDAO;
 import persistencia.UsuarioDAOMock;
 import entidades.Usuario;
 import exceptions.DAOException;
+import exceptions.UserNotFOundException;
 import exceptions.UsuarioExistenteException;
 
 public class UsuarioNegocio {
@@ -24,5 +25,19 @@ public class UsuarioNegocio {
 		}
 		
 	}
+
+	public Usuario getUsuarioLogin(String username, String password) throws UserNotFOundException, DAOException{
+		
+		if(dao.existeUsuarioSenha(username, password))
+		{
+			return dao.returnUsuario(username);
+		}
+		
+		throw new UserNotFOundException();
+		
+		
+	}
+
+	
 
 }

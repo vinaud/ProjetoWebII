@@ -13,4 +13,5 @@ public interface IUsuarioDAO {
 	public ArrayList<Usuario> deleteUsuario()throws DAOException;
 	public ArrayList<Usuario> updateUsuario(Usuario u)throws DAOException;
 	public boolean existeUsuario(String user);
+	public boolean existeUsuarioSenha(String user, String senha);
 }
