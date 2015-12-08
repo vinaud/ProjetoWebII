@@ -138,6 +138,7 @@ public class UsuarioMB {
 	
 	String lusername = "";
 	String password = "";
+	String welcome = "";
 	
 	
 	
@@ -150,6 +151,7 @@ public class UsuarioMB {
 		logado = negocio.getUsuarioLogin( username,  password);
 		//System.out.println("logou");
 		this.logged = true;
+		this.welcome = logado.getNome() +"( " +logado.getUsername() + " )";
 		
 		return "index?faces-redirect=true";
 		}
@@ -175,6 +177,7 @@ public class UsuarioMB {
 		
 		this.logado = null;
 		this.logged = false;
+		this.welcome = "";
 		
 		FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Logout", "Você desconectou do sistema com sucesso");
         FacesContext.getCurrentInstance().addMessage(null, message);

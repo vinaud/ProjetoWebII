@@ -56,7 +56,7 @@
    				 </p:dataTable>
     
     		 <br></br>
-    		 <p:commandButton id="s" value="Inserir novo servi&ccedil;o" action="insereServico.xhtml" />
+    		 <p:commandButton id="s" rendered="#{usuarioMB.logged}" value="Inserir novo servi&ccedil;o" action="insereServico.xhtml" />
     		 <p:commandButton id="t" rendered="#{!usuarioMB.logged}" value="Cadastrar novo usuário" action="cadastroUsuario.xhtml" />
     		
              </h:form>
