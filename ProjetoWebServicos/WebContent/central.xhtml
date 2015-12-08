@@ -69,16 +69,16 @@
         	
        <p>Localiza&ccedil;&atilde;o</p>
         			 
-        			 <m:map width="500px" height="500px" latitude="-5.840348" longitude="-35.209706">
+        			 <m:map width="1000px" height="500px" latitude="-5.840348" longitude="-35.209706">
 
        				 <m:marker latitude="#{centralMB.pesquisado.lat}" longitude="#{centralMB.pesquisado.longi}"/>
 					</m:map>
 		
 		<br><br></br></br>
 		
-		<p:dataScroller value="#{centralMB.exibido.comentarios}" var="comment" chunkSize="10" mode="inline" scrollHeight="300">
+		<p:dataScroller value="#{centralMB.pesquisado.comentarios}" var="comment" chunkSize="10" mode="inline" scrollHeight="300">
         <f:facet name="header">
-           Comentários dos usuários da central:
+           Comentários dos usuários do serviço:
         </f:facet>
  
         <h:panelGrid columns="2" style="width:100%" columnClasses="logo,detail">
@@ -86,7 +86,10 @@
             <p:outputPanel>
                 <h:panelGrid columns="2" cellpadding="5">
                     
-                    <h:outputText value="#{comment}" style="font-weight: bold"/>
+                    <h:outputText value="Usuário: " style="font-weight: bold"/>
+                    <h:outputText value="#{comment.comentador}" style="font-weight: bold"/>
+                    <br></br>
+                    <h:outputText value="#{comment.comentario}" style="font-weight: bold"/>
  
                    
                 </h:panelGrid>
@@ -95,9 +98,10 @@
     </p:dataScroller>
 						
 	
-	<p:outputLabel for="extended" value="Deixe seu comentário: " /><br></br>
-    <p:inputTextarea rows="6" cols="100" id="extended" required="false" value="#{centralMB.comment}" /><br></br>
-    <p:commandButton id="s" value="Comentar" action="#{centralMB.comentar}" />
+	<p:outputLabel rendered="#{usuarioMB.logged}" for="extended" value="Deixe seu comentário: " /><br></br>
+    <p:inputTextarea rendered="#{usuarioMB.logged}" rows="6" cols="100" id="extended" required="false" value="#{centralMB.comment}" /><br></br>
+    <p:commandButton id="s" rendered="#{usuarioMB.logged}" value="Comentar" action="#{centralMB.comentar(usuarioMB.welcome)}" />
+    <h:outputText value="Faça login para deixar seu comentário" rendered="#{!usuarioMB.logged}" />
         
     	</p:panel>
     	</h:form>

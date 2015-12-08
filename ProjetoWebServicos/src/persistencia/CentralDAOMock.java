@@ -21,7 +21,7 @@ public class CentralDAOMock implements ICentralDAO {
 		
 		for (int i = 0; i < centrals.size(); i++)
 		{
-			if (centrals.get(i).getNome().equalsIgnoreCase(nome))
+			if (centrals.get(i).getNome().equals(nome))
 			{
 				pesquisado = centrals.get(i);
 				break;
@@ -57,7 +57,7 @@ public class CentralDAOMock implements ICentralDAO {
 	public ArrayList<Central> updateCentral(Central s) {
 		for (int i = 0; i < centrals.size(); i++)
 		{
-			if(centrals.get(i).getId() == s.getId())
+			if (centrals.get(i).getNome().equals(s.getNome()))
 			
 			{
 				//servicos.set(i, s);

@@ -2,11 +2,13 @@ package controladores;
 
 import java.io.IOException;
 import java.util.ArrayList;
+
 import javax.annotation.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 import negocio.CentralNegocio;
 import entidades.Central;
+import entidades.Comentario;
 import exceptions.DAOException;
 
 @ManagedBean(value = "centralMB")
@@ -77,11 +79,13 @@ public class CentralMB {
 	
 	}
 	
-	public String comentar() throws DAOException
+	public String comentar(String usuario) throws DAOException
 	{
+		Comentario c = new Comentario();
+		c.setComentario(comment);
+		c.setComentador(usuario);
 		
-		
-		this.exibido.comentarios.add(comment);
+		this.pesquisado.comentarios.add(c);
 		
 		
 		negocio.atualizarCentral(exibido);
