@@ -40,7 +40,7 @@
         	Localização:<br></br><br></br>
         	Central do Cidadão Via Direta
         			
-        			<p:rating value="#{servicoMB.exibido.nota}"    >
+        			<p:rating value="#{servicoMB.exibido.nota}" readonly="#{!usuarioMB.logged}"   >
 			        
 			        <p:ajax event="rate" listener="#{servicoMB.onrate}" update="messages" />
             		

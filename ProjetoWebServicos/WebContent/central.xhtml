@@ -101,7 +101,7 @@
 	<p:outputLabel rendered="#{usuarioMB.logged}" for="extended" value="Deixe seu comentário: " /><br></br>
     <p:inputTextarea rendered="#{usuarioMB.logged}" rows="6" cols="100" id="extended" required="false" value="#{centralMB.comment}" /><br></br>
     <p:commandButton id="s" rendered="#{usuarioMB.logged}" value="Comentar" action="#{centralMB.comentar(usuarioMB.welcome)}" />
-    <h:outputText value="Faça login para deixar seu comentário" rendered="#{!usuarioMB.logged}" />
+    <h:outputText value="Faça login para deixar seu comentário e avaliar o serviço" rendered="#{!usuarioMB.logged}" />
         
     	</p:panel>
     	</h:form>
