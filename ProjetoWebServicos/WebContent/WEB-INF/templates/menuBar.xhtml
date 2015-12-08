@@ -12,7 +12,16 @@
     <h:outputText id="t001" value="Bem vindo (a) " /><h:outputText id="loggedName" value="#{usuarioMB.logado.nome}" /> <br></br>
     
     <h:link value="Efetuar login" outcome="login" rendered="#{!usuarioMB.logged}"  />
-    <h:link value="Efetuar logout" outcome="logout" rendered="#{usuarioMB.logged}"  />
+    
+    <p:commandLink id="nonAjax" actionListener="#{usuarioMB.logout}" ajax="false" rendered="#{usuarioMB.logged}">
+        <h:outputText value="Efetuar logout" />
+        <p:confirm header="Logout" message="Deseja mesmo sair do sistema?" icon="ui-icon-alert" />
+    </p:commandLink>
+    
+    <p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+        <p:commandButton value="Sim" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+        <p:commandButton value="Não" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+    </p:confirmDialog>
    
     		
     </p:panel> 

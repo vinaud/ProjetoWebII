@@ -146,9 +146,9 @@ public class UsuarioMB {
 	{
 		try
 		{
-		System.out.println("entrou");
+		//System.out.println("entrou");
 		logado = negocio.getUsuarioLogin( username,  password);
-		System.out.println("logou");
+		//System.out.println("logou");
 		this.logged = true;
 		
 		return "index?faces-redirect=true";
@@ -156,7 +156,7 @@ public class UsuarioMB {
 		
 		catch(UserNotFOundException e)
 		{
-			System.out.println("usernotfound");
+		//	System.out.println("usernotfound");
 			FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Login", "Usuário ou senha incorreto(s)" );
 			FacesContext.getCurrentInstance().addMessage(null, message);
 			return "fail";
@@ -172,11 +172,15 @@ public class UsuarioMB {
 	
 	public String logout()
 	{
+		
 		this.logado = null;
 		this.logged = false;
 		
+		FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Logout", "Você desconectou do sistema com sucesso");
+        FacesContext.getCurrentInstance().addMessage(null, message);
 		
-		return "success";
+		
+		return "index?faces-redirect=true";
 	}
 
 	public Usuario getLogado() {
