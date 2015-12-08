@@ -8,6 +8,7 @@ import javax.faces.context.FacesContext;
 import negocio.UsuarioNegocio;
 import entidades.Usuario;
 import exceptions.DAOException;
+import exceptions.UserNotFOundException;
 import exceptions.UsuarioExistenteException;
 
 @ManagedBean(value = "usuarioMB")
@@ -26,6 +27,10 @@ public class UsuarioMB {
 	{
 		user = new Usuario();
 		negocio = new UsuarioNegocio();
+		
+		this.logado = null;
+		negocio = new UsuarioNegocio();
+		this.logged = false;
 		
 	}
 
@@ -126,4 +131,89 @@ public class UsuarioMB {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
+	
+	public Usuario logado;
+	
+	public boolean logged;
+	
+	String lusername = "";
+	String password = "";
+	
+	
+	
+	
+	public String login() 
+	{
+		try
+		{
+		System.out.println("entrou");
+		logado = negocio.getUsuarioLogin( username,  password);
+		System.out.println("logou");
+		this.logged = true;
+		
+		return "index?faces-redirect=true";
+		}
+		
+		catch(UserNotFOundException e)
+		{
+			System.out.println("usernotfound");
+			FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Login", "Usuário ou senha incorreto(s)" );
+			FacesContext.getCurrentInstance().addMessage(null, message);
+			return "fail";
+		}
+		
+		catch(DAOException e)
+		{
+			FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Login", "Erro no banco, tente novamente mais tarde" );
+			FacesContext.getCurrentInstance().addMessage(null, message);
+			return "fail";
+		}
+	}
+	
+	public String logout()
+	{
+		this.logado = null;
+		this.logged = false;
+		
+		
+		return "success";
+	}
+
+	public Usuario getLogado() {
+		return logado;
+	}
+	
+	public boolean getLogged()
+	{
+		return logged;
+	}
+
+	
+
+	public void setLogado(Usuario logado) {
+		this.logado = logado;
+	}
+
+	public void setLogged(boolean logged) {
+		this.logged = logged;
+	}
+
+	
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getLusername() {
+		return lusername;
+	}
+
+	public void setLusername(String lusername) {
+		this.lusername = lusername;
+	}
+
 }
