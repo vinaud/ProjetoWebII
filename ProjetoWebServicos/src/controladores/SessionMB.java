@@ -34,8 +34,9 @@ public class SessionMB {
 	{
 		try
 		{
-		
+		System.out.println("entrou");
 		logado = negocio.getUsuarioLogin( username,  password);
+		System.out.println("logou");
 		this.logged = true;
 		
 		return "index?faces-redirect=true";
@@ -43,6 +44,7 @@ public class SessionMB {
 		
 		catch(UserNotFOundException e)
 		{
+			System.out.println("usernotfound");
 			FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Login", "Usuário ou senha incorreto(s)" );
 			FacesContext.getCurrentInstance().addMessage(null, message);
 			return "fail";

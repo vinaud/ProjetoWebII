@@ -30,7 +30,7 @@ public class UsuarioDAOMock implements IUsuarioDAO {
 		return null;
 	}
 	
-	public boolean existeUsuario(String user) {
+	public boolean existeUsuario(String user)throws DAOException{
 		for (int i = 0; i < usuarios.size(); i++)
 		{
 			if(usuarios.get(i).getUsername().equals(user))
@@ -43,7 +43,7 @@ public class UsuarioDAOMock implements IUsuarioDAO {
 		return false;
 	}
 	
-	public boolean existeUsuarioSenha(String user, String senha) {
+	public boolean existeUsuarioSenha(String user, String senha)throws DAOException {
 		for (int i = 0; i < usuarios.size(); i++)
 		{
 			if(usuarios.get(i).getUsername().equals(user) && usuarios.get(i).getSenha().equals(senha))
