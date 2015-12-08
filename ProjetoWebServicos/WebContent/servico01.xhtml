@@ -62,9 +62,9 @@
                 <h:panelGrid columns="2" cellpadding="5">
                     
                     <h:outputText value="Usuário: " style="font-weight: bold"/>
-                    <h:outputText value="x" style="font-weight: bold"/>
+                    <h:outputText value="#{comment.comentador}" style="font-weight: bold"/>
                     <br></br>
-                    <h:outputText value="#{comment}" style="font-weight: bold"/>
+                    <h:outputText value="#{comment.comentario}" style="font-weight: bold"/>
  
                    
                 </h:panelGrid>
@@ -75,7 +75,7 @@
 	
 	<p:outputLabel rendered="#{usuarioMB.logged}" for="extended" value="Deixe seu comentário: " /><br></br>
     <p:inputTextarea rendered="#{usuarioMB.logged}" rows="6" cols="100" id="extended" required="false" value="#{servicoMB.comment}" /><br></br>
-    <p:commandButton id="s" rendered="#{usuarioMB.logged}" value="Comentar" action="#{servicoMB.comentar}" />
+    <p:commandButton id="s" rendered="#{usuarioMB.logged}" value="Comentar" action="#{servicoMB.comentar(usuarioMB.welcome)}" />
     <h:outputText value="Faça login para deixar seu comentário" rendered="#{!usuarioMB.logged}" />
 						
         

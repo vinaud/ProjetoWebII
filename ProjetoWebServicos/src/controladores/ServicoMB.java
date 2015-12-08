@@ -108,12 +108,13 @@ public class ServicoMB {
         
     }
 	
-	public String comentar() throws DAOException
+	public String comentar(String usuario) throws DAOException
 	{
 		Comentario c = new Comentario();
 		c.setComentario(comment);
+		c.setComentador(usuario);
 		
-		this.exibido.comentarios.add(comment);
+		this.exibido.comentarios.add(c);
 		
 		
 		negocio.atualizarServico(exibido);

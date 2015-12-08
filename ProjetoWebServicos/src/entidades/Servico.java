@@ -35,7 +35,7 @@ public class Servico {
 	private int tempo;
 	
 	@Column
-	public ArrayList<String> comentarios = new ArrayList<String>();
+	public ArrayList<Comentario> comentarios = new ArrayList<Comentario>();
 	
 	@Id
 	@GeneratedValue
@@ -136,13 +136,13 @@ public class Servico {
 
 
 
-	public ArrayList<String> getComentarios() {
+	public ArrayList<Comentario> getComentarios() {
 		return comentarios;
 	}
 
 
 
-	public void setComentarios(ArrayList<String> comentarios) {
+	public void setComentarios(ArrayList<Comentario> comentarios) {
 		this.comentarios = comentarios;
 	}
 	
