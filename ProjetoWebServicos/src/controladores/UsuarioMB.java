@@ -151,7 +151,7 @@ public class UsuarioMB {
 		logado = negocio.getUsuarioLogin( username,  password);
 		//System.out.println("logou");
 		this.logged = true;
-		this.welcome = logado.getNome() +"( " +logado.getUsername() + " )";
+		this.welcome = logado.getNome() +" (" +logado.getUsername() + ")";
 		
 		return "index?faces-redirect=true";
 		}

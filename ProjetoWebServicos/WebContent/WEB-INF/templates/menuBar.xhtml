@@ -9,12 +9,12 @@
     	
     <p:panel id="panel"  style="margin-bottom:10px;">
     	
-    <h:outputText id="t001" value="Bem vindo (a) " /><h:outputText id="loggedName" value="#{usuarioMB.welcome}" /> <br></br>
+    <h:outputText id="t001" value="Bem Vindo(a) " /><h:outputText id="loggedName" value="#{usuarioMB.welcome}" /> <br></br>
     
-    <h:link value="Efetuar login" outcome="login" rendered="#{!usuarioMB.logged}"  />
+    <h:link value="Efetuar Login" outcome="login" rendered="#{!usuarioMB.logged}"  />
     
     <p:commandLink id="nonAjax" actionListener="#{usuarioMB.logout}" ajax="false" rendered="#{usuarioMB.logged}">
-        <h:outputText value="Efetuar logout" />
+        <h:outputText value="Efetuar Logout" />
         <p:confirm header="Logout" message="Deseja mesmo sair do sistema?" icon="ui-icon-alert" />
     </p:commandLink>
     
