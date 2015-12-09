@@ -55,7 +55,6 @@ public class Central {
 		this.nome = nome2;
 		
 	}
-
 	public String getDescricao() {
 		return descricao;
 	}
@@ -91,8 +90,6 @@ public class Central {
 	public ArrayList<Comentario> getComentarios() {
 		return comentarios;
 	}
-
-
 
 	public void setComentarios(ArrayList<Comentario> comentarios) {
 		this.comentarios = comentarios;

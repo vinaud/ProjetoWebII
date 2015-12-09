@@ -57,7 +57,6 @@ public class ServicoMB {
 	
 	public String insereServico() throws DAOException
 	{
-		//System.out.println("Entrei");
 			s = new Servico();
 			s.setNome(nome);
 			s.setDescricao(desc);
@@ -71,26 +70,18 @@ public class ServicoMB {
 			servicos = negocio.insereServico(s);
 			
 			 return "index?faces-redirect=true";
-		 
-	
 	}
 	
 	public String pesquisaServico() throws DAOException, IOException
 	{
-		//System.out.println("Entrei");
 			resPesquisa = negocio.buscaServico(busca);
-		//	System.out.println("Entrei");
 			 return "resultadoPesquisa.xhtml?faces-redirect=true";
-		 
-	
 	}
 	
 	
 	public String pesquisaCategoria(String categoria) throws DAOException, IOException
 	{
-		//System.out.println("Entrei");
 		resPesquisa = negocio.buscaCategoria(categoria);
-		//System.out.println("sai");
 		 return "categoria.xhtml?faces-redirect=true";
 		 
 	
@@ -102,9 +93,6 @@ public class ServicoMB {
         
         Integer rate = (Integer) rateEvent.getRating();
        servicos =  negocio.atualizarAvaliacao(exibido, rate);
-       // System.out.println("avaliou nota :"+ rate);
-        
-        
         
     }
 	
@@ -115,12 +103,7 @@ public class ServicoMB {
 		c.setComentador(usuario);
 		
 		this.exibido.comentarios.add(c);
-		
-		
 		negocio.atualizarServico(exibido);
-		 //System.out.println("gg");
-		 
-		
 		return "servico01.xhtml?faces-redirect=true";
 	}
 	
@@ -129,7 +112,6 @@ public class ServicoMB {
 	public String getExibido(Servico p)
 	{
 		this.exibido = p;
-	//	System.out.println("entrou: "+p.getNome());
 		 return "servico01.xhtml?faces-redirect=true";
 	}
 

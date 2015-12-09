@@ -60,7 +60,6 @@ public class CentralDAOMock implements ICentralDAO {
 			if (centrals.get(i).getNome().equals(s.getNome()))
 			
 			{
-				//servicos.set(i, s);
 				centrals.add(s);
 				centrals.remove(i);
 				break;

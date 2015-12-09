@@ -16,8 +16,6 @@ public class ServicoNegocio {
 	
 	public IServicoDAO dao = new ServicoDAOMock(); ;
 	
-	
-	
 	public ArrayList<Servico> getListaServicos() throws DAOException
 	{
 		return dao.returnAllServico();
@@ -28,14 +26,13 @@ public class ServicoNegocio {
 		return dao.insertServico(s);
 	}
 
-	public ArrayList<Servico> buscaServico(String busca) throws DAOException {
-	
+	public ArrayList<Servico> buscaServico(String busca) throws DAOException 
+	{
 			return dao.returnServico(busca);
-		
 	}
 
-	public ArrayList<Servico> buscaCategoria(String buscaCategoria) throws DAOException {
-		
+	public ArrayList<Servico> buscaCategoria(String buscaCategoria) throws DAOException 
+	{
 			return dao.returnServicoCategoria(buscaCategoria);
 	}
 	

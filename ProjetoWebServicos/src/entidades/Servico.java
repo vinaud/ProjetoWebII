@@ -54,13 +54,9 @@ public class Servico {
 		this.tempo = tempo;
 	}
 
-
-
 	public Servico() {
 		// TODO Auto-generated constructor stub
 	}
-
-
 
 	public String getNome() {
 		return nome;
@@ -86,65 +82,44 @@ public class Servico {
 		this.nota = nota;
 	}
 
-
-
 	public String getCategoria() {
 		return categoria;
 	}
-
-
 
 	public void setCategoria(String categoria) {
 		this.categoria = categoria;
 	}
 
-
-
 	public Integer getVoteCount() {
 		return voteCount;
 	}
-
-
 
 	public void setVoteCount(Integer voteCount) {
 		this.voteCount = voteCount;
 	}
 
-
-
 	public long getId() {
 		return id;
 	}
-
-
 
 	public void setId(long id) {
 		this.id = id;
 	}
 
-
-
 	public int getTempo() {
 		return tempo;
 	}
-
-
 
 	public void setTempo(int tempo) {
 		this.tempo = tempo;
 	}
 
-
-
 	public ArrayList<Comentario> getComentarios() {
 		return comentarios;
 	}
 
-
-
 	public void setComentarios(ArrayList<Comentario> comentarios) {
 		this.comentarios = comentarios;
 	}
-	
 	
 }

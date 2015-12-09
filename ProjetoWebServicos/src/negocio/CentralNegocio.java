@@ -16,8 +16,6 @@ public class CentralNegocio {
 	
 	public ICentralDAO dao = new CentralDAOMock(); ;
 	
-	
-	
 	public ArrayList<Central> getListaCentrals() throws DAOException
 	{
 		return dao.returnAllCentral();
@@ -28,17 +26,10 @@ public class CentralNegocio {
 		return dao.insertCentral(c);
 	}
 
-	/*public ArrayList<Central> buscaCentral(String busca) throws DAOException {
-	
-			return dao.returnCentral(busca);
-		
-	}*/
-	
-	public Central buscaCentral(String busca) throws DAOException {
-		
+	public Central buscaCentral(String busca) throws DAOException 
+	{
 		return dao.returnCentral(busca);
-	
-}
+	}
 	
 	public void atualizarCentral(Central s) throws DAOException
 	{

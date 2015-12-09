@@ -36,47 +36,27 @@ public class CentralMB {
 		c = new Central();
 		exibido = new Central();
 		retrieveCentrals();
-		
 	}
 	
 	public String retrieveCentrals() throws DAOException
 	{
-		
 			centrals = negocio.getListaCentrals();
 			return "success";
-		 
-	
 	}
 	
 	public String insereCentral() throws DAOException
 	{
-		
 			c = new Central();
 			c.setNome(nome);
 			centrals = negocio.insereCentral(c);
 			
 			 return "listaCentrais?faces-redirect=true";
-		 
-	
 	}
-	
-	/*public String pesquisaCentral() throws DAOException, IOException
-	{
-		
-			centrals = negocio.buscaCentral(busca);
-			 return "/WebContent/resultadoPesquisa.xhtml?faces-redirect=true";
-		 
-	
-	}*/
 	
 	public String pesquisaCentral(String central) throws DAOException, IOException
 	{
-		//System.out.println("Entrei");
 		pesquisado = negocio.buscaCentral(central);
-		//System.out.println("sai");
 		 return "central.xhtml?faces-redirect=true";
-		 
-	
 	}
 	
 	public String comentar(String usuario) throws DAOException
@@ -87,11 +67,8 @@ public class CentralMB {
 		
 		this.pesquisado.comentarios.add(c);
 		
-		
 		negocio.atualizarCentral(exibido);
-		 //System.out.println("gg");
 		 
-		
 		return "central.xhtml?faces-redirect=true";
 	}
 	
@@ -108,7 +85,6 @@ public class CentralMB {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-
 
 	public ArrayList<Central> getCentrals() {
 		return centrals;

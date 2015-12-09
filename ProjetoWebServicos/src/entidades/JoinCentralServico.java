@@ -6,7 +6,7 @@ import javax.persistence.Id;
 
 public class JoinCentralServico {
 	
-	/* Classe que faza associação entre uma central de serviço e seus serviços */
+	/* Classe que faz a associação entre uma central de serviço e seus serviços */
 	
 	@Id
 	private long centralID;
