@@ -13,5 +13,5 @@ after_success:
  
  deploy:
   provider: heroku
-  api-key: "82544c97-bc53-4b59-98f3-d63973c62c51"
-app: gerencia
+  api-key: "00d82953-3129-4cec-addb-a4c8a834664b"
+  
