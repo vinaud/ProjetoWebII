@@ -1,0 +1,17 @@
+language: java
+ jdk:
+ - oraclejdk8
+ script:
+  - mvn install -DskipTests=false
+  - git log origin/master.. --stat
+  - sudo apt-get install phantomjs
+  - git clone --depth=1 https://github.com/n1k0/casperjs.git /tmp/casperjs
+  - export PATH=$PATH:/tmp/casperjs/bin
+ script:
+   - mvn clean install -Pqulice --batch-mode --errors
+ after_success:
+  - git tag -a build_%{build_number}
+ deploy:
+  provider: heroku
+  api-key: "82544c97-bc53-4b59-98f3-d63973c62c51"
+app: gerencia
