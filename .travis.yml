@@ -5,8 +5,7 @@ jdk:
   - oraclejdk8
   - openjdk8
   
-script:
-  mvn install -DskipTests=true
+
 
 after_success:
   -git tag -a build_%{build_number}
