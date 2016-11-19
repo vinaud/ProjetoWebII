@@ -11,7 +11,7 @@ script:
 after_success:
   -git tag -a build_%{build_number}
  
- deploy:
+deploy:
   provider: heroku
   api-key: "00d82953-3129-4cec-addb-a4c8a834664b"
   
