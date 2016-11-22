@@ -12,8 +12,3 @@ after_success:
 deploy: 
   provider: heroku
   api-key: "00d82953-3129-4cec-addb-a4c8a834664b"
-  
-  
-before_install:
- - cd java
-  
